@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D3.js Heatmap Example</title>
+  <!-- Load D3.js -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Style the heatmap */
+    .heatmap rect {
+      stroke: #fff;
+      fill-opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <h1>D3.js Heatmap Example</h1>
+  <!-- Container for the heatmap -->
+  <div id="heatmap-container"></div>
+
+  <script>
+    // Generate random data for the heatmap
+    function generateData(rows, cols) {
+      const data = [];
+      for (let i = 0; i < rows; i++) {
+        const row = [];
+        for (let j = 0; j < cols; j++) {
+          row.push(Math.random());
+        }
+        data.push(row);
+      }
+      return data;
+    }
+
+    // Set dimensions for the heatmap
+    const width = 600;
+    const height = 400;
+    const margin = { top: 20, right: 20, bottom: 20, left: 40 };
+
+    // Create SVG element for the heatmap
+    const svg = d3.select("#heatmap-container")
+      .append("svg
