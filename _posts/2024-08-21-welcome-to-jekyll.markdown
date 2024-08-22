@@ -17,8 +17,22 @@ categories: journal-club
 ## Summary:
 Heterogeneity of the glioiblastoma TME using single-cell and multi-omics 
 => rewired TAM subpopulations => LLMs transfer myelin-derived lipids to cancer cells
-=> LLM-rewired immunosuppresive features in MES
+=> LLM-rewired pro-tumoric and immunosuppresive features in MES
  
+## Results
+### Murine glioblastoma displays dynamic cellular subtype heterogeneity in response to RT
+Genetically engineered mouse models (GEMMS):
+- Ink4a (CDKN2A) : tumor suppressor gene that encodes a protein involved in regulating the cell cycle.
+- Arf : tumor suppressor, control cell proliferation by stabilizing p53, a tumor suppressor
+- scRNA-seq : CD45+- x Primary,recurrent after RT 
+![image](https://github.com/user-attachments/assets/edfc518b-9084-400d-a76c-bfae0a88e930)
+
+Subtypes: 
+- neural progenitor-like (NPC-like)
+- oligodendrocyte-progenitorlike (OPC-like)
+- astrocyte-like (AC-like)
+- MES-like—is represented
+![image](https://github.com/user-attachments/assets/6632b148-3c23-45a7-a22d-a25682a8344e)
 
 In summary, we present in-depth functional analyses of a protumorigenic
 LLM subset in glioblastoma, spanning from studying
