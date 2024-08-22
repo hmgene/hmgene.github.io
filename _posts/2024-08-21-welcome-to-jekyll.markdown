@@ -41,6 +41,15 @@ Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :
 - PDG-p53 : AC-like => OPC-like
 - PDG-Ink4a : OPC-like => MES-like
 - in a stage and niche-dependent manner, mirroring results reported in glioblastoma patients
+
+### Macrophage subset dynamics correlate with
+- 4 Microglia(MG) and 4 MDM (Monocyte-Derived Macrophage)
+- MG1-P2RY12 : pre-active
+- MG2-TNF, MDM2-H2-EB1 : inflammatory
+- MG3/MDM3-GPNMB : metabolically active
+- MG4/MDM4-MKI67 : proliferating states, MES-like (Fig1H)
+
+![image](https://github.com/user-attachments/assets/019f8436-6463-44a4-9175-e319720a985f)
   
 In summary, we present in-depth functional analyses of a protumorigenic
 LLM subset in glioblastoma, spanning from studying
