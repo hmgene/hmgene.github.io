@@ -50,6 +50,9 @@ Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :
 ![image](https://github.com/user-attachments/assets/019f8436-6463-44a4-9175-e319720a985f)
   
 - MG4/MDM4-MKI67 : proliferating states, MES-like (Fig1H)
+- ? *MG1 : preactivated ~ helthy brain at LE, tumor invasion into brain parenchyma from which MG originate *
+- MDM1 : preactivated infiltrating the tumor site in MVP area (Fig1G)
+
 ![image](https://github.com/user-attachments/assets/796df034-1652-4a41-a8d2-d4ba0c6fc253)
 
   
