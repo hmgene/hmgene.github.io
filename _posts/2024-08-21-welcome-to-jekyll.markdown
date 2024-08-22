@@ -14,7 +14,7 @@ categories: journal-club
 1. TAM recycle cholesterol-rich myelin, **lipid-laden** features in glioblastoma
 2. Epigenetic rewiring by myelin debris scavenging underlies LLM **immunosuppressive** feature
 
-[Leila Akkari](https://www.nki.nl/research/research-groups/leila-akkari/harnessing-the-potential-of-macrophage-immunomodulation-in-cancer-malignancy/)
+[Leila Akkari](https://www.nki.nl/research/research-groups/leila-akkari/harnessing-the-potential-of-macrophage-immunomodulation-in-cancer-malignancy/) @ the Netherlands Cancer Institute
 ![image](https://github.com/user-attachments/assets/3df75feb-c5a2-4260-aeeb-a65272932445)
 
 
