@@ -1,9 +1,41 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Journal-Club: Macrophage-mediated myelin recycling fuels brain
+cancer malignancy, Kloosterman2024Cell"
 date:   2024-08-21 15:24:57 -0400
-categories: jekyll update
+categories: journal-club
 ---
+![image](https://github.com/user-attachments/assets/96d4a943-3913-491f-b712-46c28b58915f)
+
+>Myelin (/ˈmaɪ.əlɪn/ MY-ə-lin) is a lipid-rich material that surrounds nerve cell axons (the nervous system's electrical wires) to insulate them and increase the rate at which electrical impulses (called action potentials) pass along the axon.[1][2] (wikipedia) 
+
+## Highlights
+![image](https://github.com/user-attachments/assets/e66f9655-9d11-4c48-b001-46552f4b4105)
+1. TAM recycle cholesterol-rich myelin, **lipid-laden** features in glioblastoma
+2. Epigenetic rewiring by myelin debris scavenging underlies LLM **immunosuppressive** feature
+
+## Summary:
+Heterogeneity of the glioiblastoma TME using single-cell and multi-omics 
+=> rewired TAM subpopulations => LLMs transfer myelin-derived lipids to cancer cells
+=> LLM-rewired immunosuppresive features in MES
+ 
+
+In summary, we present in-depth functional analyses of a protumorigenic
+LLM subset in glioblastoma, spanning from studying
+their transcriptional education and chromatin alterations to their
+re-configured lipidome. We reveal that lipid-laden-TAMs’ pro-tumoral
+functions are largely driven by the excessive, TME-instructed
+uptake of myelin debris.
+
+Key Questions:
+
+- in multiple sclerosis, showing myelinphagocytosis in macrophages directly dampens T cell proliferation and neuroinflammation.43,68
+Surprisingly, however,
+- targeting LLMs in vivo did not lead to overt changes in lymphoid populations frequency in end-stage tumors. In light of the controversial roles lipids play in immune activation,69
+
+- adaptive mechanisms supportive of glioblastoma relapse post-therapy.
+- suggest MES-like glioblastoma cells rely heavily on local cholesterol metabolism
+- LLMs display immunosuppressive features and negatively correlate with response to ICB
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
