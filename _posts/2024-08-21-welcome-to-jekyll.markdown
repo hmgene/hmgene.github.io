@@ -64,34 +64,16 @@ Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :
 - 
 ![image](https://github.com/user-attachments/assets/796df034-1652-4a41-a8d2-d4ba0c6fc253)
 
-### Note, Leave Spatio/Multiomics Results for Discussion  
+### Note, Leave Spatio/Multiomics Results for Some Discussions  
 
-### Summary
-- In summary, we present in-depth functional analyses of a protumorigenic
-LLM subset in glioblastoma, spanning from studying
-their transcriptional education and chromatin alterations to their
-re-configured lipidome. We reveal that lipid-laden-TAMs’ pro-tumoral
-functions are largely driven by the excessive, TME-instructed
-uptake of myelin debris.
 
-Key Questions:
-
-- in multiple sclerosis, showing myelinphagocytosis in macrophages directly dampens T cell proliferation and neuroinflammation.43,68
-Surprisingly, however,
-- targeting LLMs in vivo did not lead to overt changes in lymphoid populations frequency in end-stage tumors. In light of the controversial roles lipids play in immune activation,69
-
+### Discussions
+- Bioinformatics Approaches:
+  - How to profile LLM using cNMF
+- in multiple sclerosis, showing myelinphagocytosis in macrophages directly dampens T cell proliferation and neuroinflammation [ref].
 - adaptive mechanisms supportive of glioblastoma relapse post-therapy.
 - suggest MES-like glioblastoma cells rely heavily on local cholesterol metabolism
 - LLMs display immunosuppressive features and negatively correlate with response to ICB
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
-
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
 
 {% highlight ruby %}
 def print_hi(name)
