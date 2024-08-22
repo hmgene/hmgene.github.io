@@ -42,7 +42,7 @@ Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :
 - PDG-Ink4a : OPC-like => MES-like
 - in a stage and niche-dependent manner, mirroring results reported in glioblastoma patients
 
-### Macrophage subset dynamics correlate with
+### Macrophage subset dynamics correlate with glioblastoma stage, cellular subtype composition, and local niches
 - 4 Microglia(MG) and 4 MDM (Monocyte-Derived Macrophage)
 - MG1-P2RY12 : pre-active
 - MG2-TNF, MDM2-H2-EB1 : inflammatory
