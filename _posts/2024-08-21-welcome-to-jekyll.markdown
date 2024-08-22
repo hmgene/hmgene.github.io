@@ -14,6 +14,10 @@ categories: journal-club
 1. TAM recycle cholesterol-rich myelin, **lipid-laden** features in glioblastoma
 2. Epigenetic rewiring by myelin debris scavenging underlies LLM **immunosuppressive** feature
 
+[Leila Akkari](https://www.nki.nl/research/research-groups/leila-akkari/harnessing-the-potential-of-macrophage-immunomodulation-in-cancer-malignancy/)
+![image](https://github.com/user-attachments/assets/3df75feb-c5a2-4260-aeeb-a65272932445)
+
+
 ## Summary:
 Heterogeneity of the glioiblastoma TME using single-cell and multi-omics 
 => rewired TAM subpopulations => LLMs transfer myelin-derived lipids to cancer cells
@@ -52,7 +56,9 @@ Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :
 - MG4/MDM4-MKI67 : proliferating states, MES-like (Fig1H)
 - ? *MG1 : preactivated ~ helthy brain at LE, tumor invasion into brain parenchyma from which MG originate *
 - MDM1 : preactivated infiltrating the tumor site in MVP area (Fig1G)
-
+- MG2 : inflammatory, TNf, Ccl4, Ccl3, !~ MES2
+- MDM2 : inflammatory, H2-Eb1,H2-Aa, **Cd74** !~ MES2
+- MDM3 : MES-enriched, PDG-Ink4a recurrent (Fig1H)
 ![image](https://github.com/user-attachments/assets/796df034-1652-4a41-a8d2-d4ba0c6fc253)
 
   
