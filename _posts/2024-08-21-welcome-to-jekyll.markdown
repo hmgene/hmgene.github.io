@@ -27,13 +27,21 @@ Genetically engineered mouse models (GEMMS):
 - scRNA-seq : CD45+- x Primary,recurrent after RT 
 ![image](https://github.com/user-attachments/assets/edfc518b-9084-400d-a76c-bfae0a88e930)
 
-Subtypes: 
+Cellular Subtypes: 
 - neural progenitor-like (NPC-like)
 - oligodendrocyte-progenitorlike (OPC-like)
 - astrocyte-like (AC-like)
 - MES-like—is represented
-![image](https://github.com/user-attachments/assets/6632b148-3c23-45a7-a22d-a25682a8344e)
+![image](https://github.com/user-attachments/assets/c670c876-d8e1-4e6b-af80-3b9bb1601922)
 
+Gliblastoma Atlas Project (GAP) datasets, niche-specific anatomic signatures (Fig1D) :
+- LE, leading edge; CT, cellular tumor; MVP, micro-vascular proliferation; PAN, pseudo-palisading cells around necrosis
+
+Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :
+- PDG-p53 : AC-like => OPC-like
+- PDG-Ink4a : OPC-like => MES-like
+- in a stage and niche-dependent manner, mirroring results reported in glioblastoma patients
+  
 In summary, we present in-depth functional analyses of a protumorigenic
 LLM subset in glioblastoma, spanning from studying
 their transcriptional education and chromatin alterations to their
