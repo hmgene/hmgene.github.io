@@ -1,91 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-08-22T18:51:35-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hyunmin Kim’s Site</title><subtitle>Hyunmin&apos;s on-site home</subtitle><entry><title type="html">Journal-Club: Macrophage-mediated myelin recycling fuels brain cancer malignancy, Kloosterman2024Cell</title><link href="http://localhost:4000/journal-club/2024/08/21/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Journal-Club: Macrophage-mediated myelin recycling fuels brain cancer malignancy, Kloosterman2024Cell" /><published>2024-08-21T15:24:57-04:00</published><updated>2024-08-21T15:24:57-04:00</updated><id>http://localhost:4000/journal-club/2024/08/21/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/journal-club/2024/08/21/welcome-to-jekyll.html"><![CDATA[<p><img src="https://github.com/user-attachments/assets/96d4a943-3913-491f-b712-46c28b58915f" alt="image" /></p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-07T13:02:14-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hyunmin Kim, Ph.D</title><subtitle>Bioinformaticist, who believes Bio=Information, am interested in Cellular programming via epigenomic and transcriptomic gene regulations.</subtitle><entry><title type="html">Single-cell SeqWell DATA with cNMF</title><link href="http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1.html" rel="alternate" type="text/html" title="Single-cell SeqWell DATA with cNMF" /><published>2024-09-07T11:55:38-04:00</published><updated>2024-09-07T11:55:38-04:00</updated><id>http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1</id><content type="html" xml:base="http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1.html"><![CDATA[<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span><span class="w">
+</span><span class="n">options</span><span class="p">(</span><span class="n">bitmapType</span><span class="o">=</span><span class="s1">'cairo'</span><span class="p">)</span><span class="w">
+</span><span class="n">options</span><span class="p">(</span><span class="n">future.globals.maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w">
 
-<blockquote>
-  <p>Myelin (/ˈmaɪ.əlɪn/ MY-ə-lin) is a lipid-rich material that surrounds nerve cell axons (the nervous system’s electrical wires) to insulate them and increase the rate at which electrical impulses (called action potentials) pass along the axon.[1][2] (wikipedia)</p>
-</blockquote>
+</span><span class="c1">################### We converted all the raw STARsolo outputs into a tab-delimited text matrix (genes in rows, cells in columns) and merged all these matrices to form a single matrix. The barcodes for each tumor were prefixed with "TumorID_" #########</span><span class="w">
 
-<h2 id="highlights">Highlights</h2>
-<p><img src="https://github.com/user-attachments/assets/e66f9655-9d11-4c48-b001-46552f4b4105" alt="image" /></p>
-<ol>
-  <li>TAM recycle cholesterol-rich myelin, <strong>lipid-laden</strong> features in glioblastoma</li>
-  <li>Epigenetic rewiring by myelin debris scavenging underlies LLM <strong>immunosuppressive</strong> feature</li>
-</ol>
+</span><span class="n">data</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">read.table</span><span class="p">(</span><span class="s2">"All_SeqWell_220818_Raw_Expression.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> </span><span class="n">head</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">row.names</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
 
-<p><a href="https://www.nki.nl/research/research-groups/leila-akkari/harnessing-the-potential-of-macrophage-immunomodulation-in-cancer-malignancy/">Leila Akkari</a> @ the Netherlands Cancer Institute
-<img src="https://github.com/user-attachments/assets/3df75feb-c5a2-4260-aeeb-a65272932445" alt="image" /></p>
+</span><span class="n">Tumors.combined</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">CreateSeuratObject</span><span class="p">(</span><span class="n">counts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">,</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"SeqWell"</span><span class="p">,</span><span class="w"> </span><span class="n">min.cells</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="n">min.features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">)</span><span class="w">
 
-<h2 id="summary">Summary:</h2>
-<p>Heterogeneity of the glioiblastoma TME using single-cell and multi-omics 
-=&gt; rewired TAM subpopulations =&gt; LLMs transfer myelin-derived lipids to cancer cells
-=&gt; LLM-rewired pro-tumoric and immunosuppresive features in MES</p>
+</span><span class="n">Tumors.combined</span><span class="p">[[</span><span class="s2">"percent.mt"</span><span class="p">]]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">PercentageFeatureSet</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">pattern</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"^MT."</span><span class="p">)</span><span class="w">
 
-<h2 id="results">Results</h2>
-<h3 id="murine-glioblastoma-displays-dynamic-cellular-subtype-heterogeneity-in-response-to-rt">Murine glioblastoma displays dynamic cellular subtype heterogeneity in response to RT</h3>
-<p>Genetically engineered mouse models (GEMMS):</p>
-<ul>
-  <li>Ink4a (CDKN2A) : tumor suppressor gene that encodes a protein involved in regulating the cell cycle.</li>
-  <li>Arf : tumor suppressor, control cell proliferation by stabilizing p53, a tumor suppressor</li>
-  <li>scRNA-seq : CD45+- x Primary,recurrent after RT 
-<img src="https://github.com/user-attachments/assets/edfc518b-9084-400d-a76c-bfae0a88e930" alt="image" /></li>
-</ul>
+</span><span class="n">all.genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rownames</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">)</span><span class="w">
 
-<p>Cellular Subtypes:</p>
-<ul>
-  <li>neural progenitor-like (NPC-like)</li>
-  <li>oligodendrocyte-progenitorlike (OPC-like)</li>
-  <li>astrocyte-like (AC-like)</li>
-  <li>MES-like—is represented
-<img src="https://github.com/user-attachments/assets/c670c876-d8e1-4e6b-af80-3b9bb1601922" alt="image" /></li>
-</ul>
 
-<p>Gliblastoma Atlas Project (GAP) datasets, niche-specific anatomic signatures (Fig1D) :</p>
-<ul>
-  <li>LE, leading edge; CT, cellular tumor; MVP, micro-vascular proliferation; PAN, pseudo-palisading cells around necrosis</li>
-</ul>
+</span><span class="c1">######## Filtering Low Quality Cells ##############</span><span class="w">
 
-<p>Intra-tumor heterogeneity primary/recurrent post-RT (Fig1D) :</p>
-<ul>
-  <li>PDG-p53 : AC-like =&gt; OPC-like</li>
-  <li>PDG-Ink4a : OPC-like =&gt; MES-like</li>
-  <li>in a stage and niche-dependent manner, mirroring results reported in glioblastoma patients</li>
-</ul>
+</span><span class="n">Tumors.combined</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">subset</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">subset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nFeature_RNA</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">500</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nFeature_RNA</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">6000</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">nCount_RNA</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="m">1000</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">percent.mt</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">25</span><span class="p">)</span><span class="w">
 
-<h3 id="macrophage-subset-dynamics-correlate-with-glioblastoma-stage-cellular-subtype-composition-and-local-niches">Macrophage subset dynamics correlate with glioblastoma stage, cellular subtype composition, and local niches</h3>
-<ul>
-  <li>4 Microglia(MG) and 4 MDM (Monocyte-Derived Macrophage)</li>
-  <li>MG1-P2RY12 : pre-active</li>
-  <li>MG2-TNF, MDM2-H2-EB1 : inflammatory</li>
-  <li>
-    <p>MG3/MDM3-GPNMB : metabolically active
-<img src="https://github.com/user-attachments/assets/019f8436-6463-44a4-9175-e319720a985f" alt="image" /></p>
-  </li>
-  <li>MG4/MDM4-MKI67 : proliferating states, MES-like (Fig1H)</li>
-  <li>? *MG1 : preactivated ~ helthy brain at LE, tumor invasion into brain parenchyma from which MG originate *</li>
-  <li>MDM1 : preactivated infiltrating the tumor site in MVP area (Fig1G)</li>
-  <li>MG2 : inflammatory, TNf, Ccl4, Ccl3, !~ MES2</li>
-  <li>MDM2 : inflammatory, H2-Eb1,H2-Aa, <strong>Cd74</strong> !~ MES2</li>
-  <li><strong>MDM3/MG3</strong> : MES-enriched, PDG-Ink4a recurrent (Fig1H), withn the PAN (hypoxic) glioblastom niche
-    <ul>
-      <li>share lipid-associated macrophages</li>
-      <li>previously ascribed a lipid/phagocytic, pro-tumorigenic immuno-suppresive [ref]</li>
-    </ul>
-  </li>
-  <li><img src="https://github.com/user-attachments/assets/796df034-1652-4a41-a8d2-d4ba0c6fc253" alt="image" /></li>
-</ul>
+</span><span class="n">pdf</span><span class="p">(</span><span class="s2">"SeqWell_WT_Mutant_Tumors_QC_AF.pdf"</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w">
+</span><span class="n">VlnPlot</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s2">"nFeature_RNA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"nCount_RNA"</span><span class="p">,</span><span class="w"> </span><span class="s2">"percent.mt"</span><span class="p">),</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span><span class="w">
+</span><span class="n">dev.off</span><span class="p">()</span><span class="w">
 
-<h3 id="note-leave-spatiomultiomics-results-for-some-discussions">Note, Leave Spatio/Multiomics Results for Some Discussions</h3>
+</span><span class="c1">############### Normalization ##################</span><span class="w">
 
-<h3 id="discussions">Discussions</h3>
-<ul>
-  <li>Bioinformatics Approaches:
-    <ul>
-      <li>How to profile LLM using cNMF</li>
-    </ul>
-  </li>
-  <li>in multiple sclerosis, showing myelinphagocytosis in macrophages directly dampens T cell proliferation and neuroinflammation [ref].</li>
-  <li>adaptive mechanisms supportive of glioblastoma relapse post-therapy.</li>
-  <li>suggest MES-like glioblastoma cells rely heavily on local cholesterol metabolism</li>
-  <li>LLMs display immunosuppressive features and negatively correlate with response to ICB</li>
-</ul>
+</span><span class="n">Tumors.combined</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">NormalizeData</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">)</span><span class="w">
+</span><span class="n">all.genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">rownames</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">)</span><span class="w">
+</span><span class="n">Tumors.combined</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">ScaleData</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">features</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">all.genes</span><span class="p">)</span><span class="w">
 
-<p>Check out the <a href="https://jekyllrb.com/docs/home">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/jekyll/jekyll">Jekyll’s GitHub repo</a>. If you have questions, you can ask them on <a href="https://talk.jekyllrb.com/">Jekyll Talk</a>.</p>]]></content><author><name></name></author><category term="journal-club" /><summary type="html"><![CDATA[]]></summary></entry></feed>
+
+</span><span class="c1">######## Calculating Variable Scores for each gene in the matrix and outputting the results ##############</span><span class="w">
+
+</span><span class="n">Tumors.combined</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">FindVariableFeatures</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">selection.method</span><span class="o">=</span><span class="s2">"vst"</span><span class="p">,</span><span class="w"> </span><span class="n">nfeatures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2000</span><span class="p">)</span><span class="w">
+
+</span><span class="n">Var</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">HVFInfo</span><span class="p">(</span><span class="n">object</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">selection.method</span><span class="o">=</span><span class="s2">"vst"</span><span class="p">,</span><span class="w"> </span><span class="n">assay</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"RNA"</span><span class="p">)</span><span class="w">
+
+</span><span class="n">write.table</span><span class="p">(</span><span class="n">Var</span><span class="p">,</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s2">"SeqWell_Full_Gene_List_Variable_Score.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> </span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">col.names</span><span class="o">=</span><span class="kc">NA</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">########## Identified top 4000 variable genes and saved them in a text file as a list "Variable_Genes_SeqWell.txt" (one gene per row) #################</span><span class="w">
+
+</span><span class="n">Variable_Genes</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">scan</span><span class="p">(</span><span class="s2">"Variable_Genes_SeqWell.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span><span class="w">
+
+</span><span class="n">Matrix</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">as.matrix</span><span class="p">(</span><span class="n">GetAssayData</span><span class="p">(</span><span class="n">Tumors.combined</span><span class="p">,</span><span class="w"> </span><span class="n">slot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"counts"</span><span class="p">))</span><span class="w">
+
+
+</span><span class="n">SeqWell3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">Matrix</span><span class="p">[</span><span class="n">rownames</span><span class="p">(</span><span class="n">Matrix</span><span class="p">)</span><span class="w"> </span><span class="o">%in%</span><span class="w"> </span><span class="n">Variable_Genes</span><span class="p">,]</span><span class="w">
+
+</span><span class="n">write.table</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="n">SeqWell3</span><span class="p">),</span><span class="w"> </span><span class="n">file</span><span class="o">=</span><span class="s2">"SeqWell_Matrix_Filtered_For_NMF.txt"</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">,</span><span class="w"> </span><span class="n">quote</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">col.names</span><span class="o">=</span><span class="kc">NA</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>]]></content><author><name></name></author><category term="cnmf" /><category term="single-cell" /><summary type="html"><![CDATA[```R library(dplyr) library(Seurat) options(bitmapType=’cairo’) options(future.globals.maxSize = 8000 * 1024^2)]]></summary></entry></feed>

@@ -1,0 +1,53 @@
+# _data/cv.yml
+name: Hyunmin Kim
+title: Bioinformatician
+contact:
+  email: hmgene@gmail.com
+  phone: +4408297517
+  linkedin: https://www.linkedin.com/in/hyunmin-kim-2a439b5b/
+  github: https://github.com/hmgene
+
+sections:
+  - title: Education
+    items:
+      - degree: Ph.D in Bioinformatics
+        institution: University of Colorado School of Medicine, Aurora CO
+        dates: 2004 - 2009
+        description: >
+          Study on Transcription Factor Binding Site Evolution Modeling 
+      - degree: M.S in Computer Science 
+        institution: GwanJu Institute of Science and Technology (GIST), Gwanju, S. Korea
+        dates: 2000 - 2002
+        description: >
+          Specialized in Parallel Data Mining 
+      - degree: B.S in Computer Science 
+        institution: InHa University, Incheon, S. Korea
+        dates: 1993 - 2000 (Served Army 1995-1997)
+        description: Transferred Major from Bioengineering to Computer Science 
+  - title: Experience
+    items:
+      - position: Senior Research Associate, Specialized Technical Skills
+        institution: Case Western Reserve University, Cleveland OH
+        dates: 2021 - Present
+        description: >
+          Leading the bioinformatics in 3D genomics and single-cell studies 
+      - position: CTO
+        company: KURE.AI, Seoul Korea
+        dates: 2021 - 2021
+        description: >
+          Conducted research on single-cell-driven CAR-T Biomarkers
+
+      - position: Staff Scientist (Faculty)
+        institution: Cleveland Clinic, Cleveland OH
+        dates: 2020 - 2021
+        description: >
+          Leading the bioinformatics in single-cell studies 
+
+  - title: Skills
+    items:
+      - skill: Languages
+        category: Programming Language
+        name: Perl,R,Python,Golang 
+      - skill: Languages
+        category: Workflow
+        name: WDL, Nextflow
