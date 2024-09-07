@@ -13,17 +13,23 @@ permalink: /cv/
   <li>LinkedIn: <a href="{{ site.data.cv.contact.linkedin }}" target="_blank">LinkedIn Profile</a></li>
   <li>GitHub: <a href="{{ site.data.cv.contact.github }}" target="_blank">GitHub Profile</a></li>
 </ul>
-
 {% for section in site.data.cv.sections %}
   <h2>{{ section.title }}</h2>
   <ul>
     {% for item in section.items %}
-      <li>
-        <strong>{{ item.degree or item.position }}</strong><br/>
-        <em>{{ item.institution or item.company }} ({{ item.dates }})</em><br/>
-        <p>{{ item.description }}</p>
-      </li>
+        {% if item.skill %}
+          <strong>{{ item.category }}:</strong> {{ item.name }}<br/>
+        {% elsif item.position %}
+          <strong>{{ item.position }}</strong><br/>
+          <em>{{ item.institution }} ({{ item.dates }})</em><br/>
+          <p>{{ item.description }}</p>
+        {% elsif item.degree %}
+          <strong>{{ item.degree }}</strong><br/>
+          <em>{{ item.institution }} ({{ item.dates }})</em><br/>
+          <p>{{ item.description }}</p>
+        {% endif %}
     {% endfor %}
   </ul>
 {% endfor %}
+
 
