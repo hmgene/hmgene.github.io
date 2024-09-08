@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Copy number variation using HiChIP data"
+date:   2024-09-08 11:54:38 -0400
+categories: cnv hichip
+---
+
+## Background
+Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].
+DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. 
+This ensures that only copy number enrichment unaffected by specific binding event, are retained. 
+The peak calling outcomes are highly dependent on the specific algorithm used. 
+Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex, non-symmetric peak forms. 
+For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
+
+## Methods 
+
+$$ log(C) = /beta_0( GCcontent ) + /beta_2( Mappability ) + + /epsilon $$
+
+### CopywriteR Algorithm
+
