@@ -33,6 +33,11 @@ plugins:
   - jekyll-feed
 feed:
   path: feed.xml
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

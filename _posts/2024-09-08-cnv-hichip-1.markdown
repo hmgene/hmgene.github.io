@@ -15,7 +15,8 @@ For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 pea
 
 ## Methods 
 
-$$ log(C) = /beta_0( GCcontent ) + /beta_2( Mappability ) + + /epsilon $$
+Copynumber 
+$$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 
 ### CopywriteR Algorithm
 
