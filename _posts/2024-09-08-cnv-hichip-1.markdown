@@ -6,12 +6,18 @@ categories: cnv hichip
 ---
 
 ## Background
-Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].
-DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. 
-This ensures that only copy number enrichment unaffected by specific binding event, are retained. 
-The peak calling outcomes are highly dependent on the specific algorithm used. 
-Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex, non-symmetric peak forms. 
-For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
+- Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].
+- DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. 
+- This ensures that only copy number enrichment unaffected by specific binding event, are retained. 
+- The peak calling outcomes are highly dependent on the specific algorithm used. 
+- Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex, non-symmetric peak forms. 
+For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains.
+- H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
+- There are some CNV tools for HiC (PMC6127909)[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6127909/] [more ref]
+- **No CNV tools for HiChIP data **
+- CNV of MG63.3 H3K27ac on Chr6 Regions
+<img width="1343" alt="image" src="https://github.com/user-attachments/assets/221d2413-e53b-4706-9ad4-014c69dee9a2">
+
 
 ## Problem
 ### Different CNVs with Different Data HiChIP(black), ChIP-seq(blue), and ChIP-seq Input (Red)
@@ -45,7 +51,5 @@ $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 - Recovered CNV calling at 5' body of SCIRT 
 <img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc">
 
-- CNV of MG63.3 H3K27ac on Chr6 Regions
-<img width="1343" alt="image" src="https://github.com/user-attachments/assets/221d2413-e53b-4706-9ad4-014c69dee9a2">
 
 
