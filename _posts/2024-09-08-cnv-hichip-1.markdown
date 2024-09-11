@@ -14,13 +14,34 @@ Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex,
 For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
 
 ## Problem
-<img width="679" alt="image" src="https://github.com/user-attachments/assets/08787f31-ee83-42d6-a539-316f3e71c527">
+### Different CNVs with Different Data HiChIP(black), ChIP-seq(blue), and ChIP-seq Input (Red)
+<img width="708" alt="image" src="https://github.com/user-attachments/assets/eb607ed2-29f1-409d-98ca-524c0b73a796">
+
+### Different Peaks with Different Algorithms 
+- MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k)
+- HOMER : 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
+- CopywriteR : non-parameteric, FDR-base 
+<img width="777" alt="image" src="https://github.com/user-attachments/assets/854cc534-035b-43a5-b8e7-ff66b64026e4">
 
 ## Methods 
-
-
-Copynumber 
+- Modify CopywriteR algorithm (reduce expantion)
+- CopywriteR Copynumber Model 
+   
 $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
+- Code ([full code](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R )
+```
+345                 retest.peak.ranges <- apply(test, 1, function(x) {
+346                     left.lower.boundary <- max(0, (as.integer(x["start"]) - (resolution + 1)))
+347                     left.higher.boundary <- max(0, (as.integer(x["start"]) - 1))
+348                     right.lower.boundary <- min(chromosomes[selection],
+349                                                 (as.integer(x["end"]) + 1))
+350                     right.higher.boundary <- min(chromosomes[selection],
+351                                                  (as.integer(x["end"]) + (resolution + 1)))
+352                     left.peakCutoff <- ceiling(.peakCutoff(cov.chr[left.lower.boundary:left.higher.boundary],fdr.cutoff=FDRT))
+353                     right.peakCutoff <- ceiling(.peakCutoff(cov.chr[right.lower.boundary:right.higher.boundary],fdr.cutoff=FDRT))
+```
 
-### CopywriteR Algorithm
+## Results
+- Recovered CNV calling at 5' body of SCIRT 
+<img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc">
 
