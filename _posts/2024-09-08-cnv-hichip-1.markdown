@@ -39,8 +39,8 @@ Peaks by CopywriteR, HOMER(p-53), MACS2(p-4)
 - CopywriteR Copynumber Model 
    
 $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
-- Code ([fullcode](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R)
-```
+- Peak Expantion Algorithm: [fullcode](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R)
+```R
 345                 retest.peak.ranges <- apply(test, 1, function(x) {
 346                     left.lower.boundary <- max(0, (as.integer(x["start"]) - (resolution + 1)))
 347                     left.higher.boundary <- max(0, (as.integer(x["start"]) - 1))
@@ -51,12 +51,15 @@ $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 352                     left.peakCutoff <- ceiling(.peakCutoff(cov.chr[left.lower.boundary:left.higher.boundary],fdr.cutoff=FDRT))
 353                     right.peakCutoff <- ceiling(.peakCutoff(cov.chr[right.lower.boundary:right.higher.boundary],fdr.cutoff=FDRT))
 ```
+> The original algorithm uses FDR=0.1 for finding extention 
+> Applied stringent FDRT=0.0001
 
 ## Results
 - Recovered CNV calling at 5' body of SCIRT 
 <img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc">
 
-- CNV and Loops
+## Discussion
+- Loops are good indicators CNV?
 <img width="1300" alt="image" src="https://github.com/user-attachments/assets/0c3fe4e2-7432-4d3b-8c75-ed3a02f904df">
 
 
