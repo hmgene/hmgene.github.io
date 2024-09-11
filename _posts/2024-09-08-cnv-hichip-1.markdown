@@ -28,7 +28,7 @@ For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 pea
 - CopywriteR Copynumber Model 
    
 $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
-- Code ([full code](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R )
+- Code ([fullcode](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R)
 ```
 345                 retest.peak.ranges <- apply(test, 1, function(x) {
 346                     left.lower.boundary <- max(0, (as.integer(x["start"]) - (resolution + 1)))
@@ -44,4 +44,8 @@ $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 ## Results
 - Recovered CNV calling at 5' body of SCIRT 
 <img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc">
+
+- CNV of MG63.3 H3K27ac on Chr6 Regions
+<img width="1343" alt="image" src="https://github.com/user-attachments/assets/221d2413-e53b-4706-9ad4-014c69dee9a2">
+
 
