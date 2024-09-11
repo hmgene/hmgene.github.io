@@ -13,7 +13,11 @@ The peak calling outcomes are highly dependent on the specific algorithm used.
 Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex, non-symmetric peak forms. 
 For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
 
+## Problem
+<img width="679" alt="image" src="https://github.com/user-attachments/assets/08787f31-ee83-42d6-a539-316f3e71c527">
+
 ## Methods 
+
 
 Copynumber 
 $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
