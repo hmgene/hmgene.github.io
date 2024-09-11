@@ -30,7 +30,8 @@ Example of CNV calls on MG63.3 H3K27ac at Chr6 Regions
 - HOMER : 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
 - CopywriteR : non-parameteric, FDR-base 
 
-<img width="1194" alt="image" src="https://github.com/user-attachments/assets/8ec08826-9132-4a59-99e2-66d7770cae5d">
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/276a317f-4318-4452-a8a9-611803a6a6b4">
+
 
 ## Methods 
 - Modify CopywriteR algorithm (reduce expantion)
