@@ -69,5 +69,11 @@ To make the peak caller smarter
 - New model
 $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \beta_2(3Dcontact) \epsilon $$
 
+- Other examples
+<img width="691" alt="image" src="https://github.com/user-attachments/assets/f4273b16-13a0-4bcc-a597-86d98a2bc32a">
+<img width="627" alt="image" src="https://github.com/user-attachments/assets/b7d3ff8a-aa0c-44b5-bd2e-106c17ae91ab">
+
+
+
 
 
