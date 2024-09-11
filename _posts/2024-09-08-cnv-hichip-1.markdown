@@ -13,7 +13,10 @@ categories: cnv hichip
   - For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains.
   - H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
   - Pol2 ..
-- There are some CNV tools for HiC (PMC6127909[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6127909/] [more ref]
+- There are some CNV tools for HiC 
+  - LOIC [PMC6127909]
+  - HiNT [PMC7087379]
+  - HiCnv and OneD [ref]
 - **No CNV tools for HiChIP data**
 
   
