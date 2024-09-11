@@ -26,10 +26,11 @@ Example of CNV calls on MG63.3 H3K27ac at Chr6 Regions
 <img width="708" alt="image" src="https://github.com/user-attachments/assets/eb607ed2-29f1-409d-98ca-524c0b73a796">
 
 ### Different Peaks with Different Algorithms 
-- MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k)
-- HOMER : 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
 - CopywriteR : non-parameteric, FDR-base 
+- HOMER : 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
+- MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k)
 
+Peaks by CopywriteR, HOMER(p-53), MACS2(p-4)
 <img width="644" alt="image" src="https://github.com/user-attachments/assets/276a317f-4318-4452-a8a9-611803a6a6b4">
 
 
