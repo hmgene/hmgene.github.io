@@ -51,5 +51,9 @@ $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 - Recovered CNV calling at 5' body of SCIRT 
 <img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc">
 
+- CNV and Loops
+<img width="461" alt="image" src="https://github.com/user-attachments/assets/0c3fe4e2-7432-4d3b-8c75-ed3a02f904df">
+
+
 
 
