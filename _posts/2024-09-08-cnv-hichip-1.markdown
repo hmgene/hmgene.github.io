@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Copy number variation using HiChIP data"
+title:  "Predict Copy Number Variation Using HiChIP Data"
 date:   2024-09-08 11:54:38 -0400
 categories: cnv hichip
 ---
