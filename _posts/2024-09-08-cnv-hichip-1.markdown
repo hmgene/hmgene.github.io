@@ -22,23 +22,24 @@ Example of CNV calls on MG63.3 H3K27ac at Chr6 Regions
 
 
 ## Problem
-### Different CNVs with Different Data HiChIP(black), ChIP-seq(blue), and ChIP-seq Input (Red)
+### Different CNVs with Different Data 
+HiChIP(black), ChIP-seq(blue), and ChIP-seq Input(Gold)
 <img width="708" alt="image" src="https://github.com/user-attachments/assets/eb607ed2-29f1-409d-98ca-524c0b73a796">
 
 ### Different Peaks with Different Algorithms 
-- CopywriteR : non-parameteric, FDR-base 
-- HOMER : 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
-- MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k)
+- CopywriteR : non-parameteric, FDR-base, expand peaks within **segment boundaries** 
+- HOMER : Simple poisson model, 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
+- MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k), bad at expantion
 
-Peaks by CopywriteR, HOMER(p-53), MACS2(p-4)
+CNV score is measured after filtering peaks. 
+- Peaks by CopywriteR (top), HOMER(p-53)(mid), MACS2(p-4)(bottom)
 <img width="644" alt="image" src="https://github.com/user-attachments/assets/276a317f-4318-4452-a8a9-611803a6a6b4">
 
-
 ## Methods 
-- Modify CopywriteR algorithm (reduce expantion)
-- CopywriteR Copynumber Model 
-   
-$$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
+To make the peak caller smarter 
+- Understand CopywriteR Model  
+
+- Modify the CopywriteR algorithm (reduce peak expantion)
 - Peak Expantion Algorithm: [fullcode](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R)
 ```R
 345                 retest.peak.ranges <- apply(test, 1, function(x) {
@@ -51,7 +52,7 @@ $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 352                     left.peakCutoff <- ceiling(.peakCutoff(cov.chr[left.lower.boundary:left.higher.boundary],fdr.cutoff=FDRT))
 353                     right.peakCutoff <- ceiling(.peakCutoff(cov.chr[right.lower.boundary:right.higher.boundary],fdr.cutoff=FDRT))
 ```
-> The original algorithm uses FDR=0.1 for finding extention 
+> The original algorithm uses FDR=0.1 for adding peaks
 > Applied stringent FDRT=0.0001
 
 ## Results
@@ -62,6 +63,8 @@ $$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \epsilon $$
 - Loops are good indicators CNV?
 <img width="1300" alt="image" src="https://github.com/user-attachments/assets/0c3fe4e2-7432-4d3b-8c75-ed3a02f904df">
 
+- New model
+$$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \beta_2(3Dcontact) \epsilon $$
 
 
 
