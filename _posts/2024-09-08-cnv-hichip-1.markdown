@@ -1,0 +1,79 @@
+---
+layout: post
+title:  "Predict Copy Number Variation Using HiChIP Data"
+date:   2024-09-08 11:54:38 -0400
+categories: cnv hichip
+---
+
+## Background
+- Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].
+- DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. 
+- The peak calling outcomes are highly dependent on the specific algorithm used. 
+- Most ChIP-seq and ATAC-seq peak callers are not designed for detecting complex, non-symmetric peak patterns. 
+  - For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains.
+  - H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].
+  - Pol2 ..
+- There are some CNV tools for HiC 
+  - LOIC [PMC6127909]
+  - HiNT [PMC7087379]
+  - HiCnv and OneD [ref]
+- **No CNV tools for HiChIP data**
+
+  
+Example of CNV calls on MG63.3 H3K27ac at Chr6 Regions
+<img width="1343" alt="image" src="https://github.com/user-attachments/assets/221d2413-e53b-4706-9ad4-014c69dee9a2">
+
+
+## Problem
+### Different CNVs with Different Data 
+HiChIP(black), ChIP-seq(blue), and ChIP-seq Input(Gold)
+<img width="708" alt="image" src="https://github.com/user-attachments/assets/eb607ed2-29f1-409d-98ca-524c0b73a796">
+
+### Different Peaks with Different Algorithms 
+- CopywriteR : non-parameteric, FDR-base, expand peaks within **segment boundaries** 
+- HOMER : Simple poisson model, 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together 
+- MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k), bad at expantion
+
+CNV score is measured after filtering peaks. 
+- Peaks by CopywriteR (top), HOMER(p-53)(mid), MACS2(p-4)(bottom)
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/276a317f-4318-4452-a8a9-611803a6a6b4">
+
+## Methods 
+To make the peak caller smarter 
+- Understand CopywriteR Model  
+
+- Modify the CopywriteR algorithm (reduce peak expantion)
+- Peak Expantion Algorithm: [fullcode](https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R)
+```R
+345                 retest.peak.ranges <- apply(test, 1, function(x) {
+346                     left.lower.boundary <- max(0, (as.integer(x["start"]) - (resolution + 1)))
+347                     left.higher.boundary <- max(0, (as.integer(x["start"]) - 1))
+348                     right.lower.boundary <- min(chromosomes[selection],
+349                                                 (as.integer(x["end"]) + 1))
+350                     right.higher.boundary <- min(chromosomes[selection],
+351                                                  (as.integer(x["end"]) + (resolution + 1)))
+352                     left.peakCutoff <- ceiling(.peakCutoff(cov.chr[left.lower.boundary:left.higher.boundary],fdr.cutoff=FDRT))
+353                     right.peakCutoff <- ceiling(.peakCutoff(cov.chr[right.lower.boundary:right.higher.boundary],fdr.cutoff=FDRT))
+```
+> The original algorithm uses FDR=0.1 for adding peaks
+> Applied stringent FDRT=0.0001
+
+## Results
+- Recovered CNV calling at 5' body of SCIRT 
+<img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc">
+
+## Discussion
+- Loops are good indicators CNV?
+<img width="1300" alt="image" src="https://github.com/user-attachments/assets/0c3fe4e2-7432-4d3b-8c75-ed3a02f904df">
+
+- New model
+$$ log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \beta_2(3Dcontact) \epsilon $$
+
+- Other examples
+<img width="691" alt="image" src="https://github.com/user-attachments/assets/f4273b16-13a0-4bcc-a597-86d98a2bc32a">
+<img width="627" alt="image" src="https://github.com/user-attachments/assets/b7d3ff8a-aa0c-44b5-bd2e-106c17ae91ab">
+
+
+
+
+

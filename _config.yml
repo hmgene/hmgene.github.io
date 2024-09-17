@@ -26,11 +26,19 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: hngene
 github_username:  hmgene
+linkedin_username: hyunmin-kim-2a439b5b
 
 # Build settings
 theme: minima
 plugins:
   - jekyll-feed
+feed:
+  path: feed.xml
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
