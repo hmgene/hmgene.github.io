@@ -1,16 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-09-08T12:22:32-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hyunmin Kim, Ph.D</title><subtitle>Bioinformaticist, who believes Bio=Information, am interested in Cellular programming via epigenomic and transcriptomic gene regulations.</subtitle><entry><title type="html">Copy number variation using HiChIP data</title><link href="http://localhost:4000/cnv/hichip/2024/09/08/cnv-hichip-1.html" rel="alternate" type="text/html" title="Copy number variation using HiChIP data" /><published>2024-09-08T11:54:38-04:00</published><updated>2024-09-08T11:54:38-04:00</updated><id>http://localhost:4000/cnv/hichip/2024/09/08/cnv-hichip-1</id><content type="html" xml:base="http://localhost:4000/cnv/hichip/2024/09/08/cnv-hichip-1.html"><![CDATA[<h2 id="background">Background</h2>
-<p>Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].
-DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. 
-This ensures that only copy number enrichment unaffected by specific binding event, are retained. 
-The peak calling outcomes are highly dependent on the specific algorithm used. 
-Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex, non-symmetric peak forms. 
-For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-09-19T14:12:52-04:00</updated><id>/feed.xml</id><title type="html">Hyunmin Kim, Ph.D</title><subtitle>Bioinformaticist, who believes Bio=Information, am interested in Cellular programming via epigenomic and transcriptomic gene regulations.</subtitle><entry><title type="html">Predict Copy Number Variation Using HiChIP Data</title><link href="/cnv/hichip/2024/09/08/cnv-hichip-1.html" rel="alternate" type="text/html" title="Predict Copy Number Variation Using HiChIP Data" /><published>2024-09-08T11:54:38-04:00</published><updated>2024-09-08T11:54:38-04:00</updated><id>/cnv/hichip/2024/09/08/cnv-hichip-1</id><content type="html" xml:base="/cnv/hichip/2024/09/08/cnv-hichip-1.html"><![CDATA[<h2 id="background">Background</h2>
+<ul>
+  <li>Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].</li>
+  <li>DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals.</li>
+  <li>The peak calling outcomes are highly dependent on the specific algorithm used.</li>
+  <li>Most ChIP-seq and ATAC-seq peak callers are not designed for detecting complex, non-symmetric peak patterns.
+    <ul>
+      <li>For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains.</li>
+      <li>H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].</li>
+      <li>Pol2 ..</li>
+    </ul>
+  </li>
+  <li>There are some CNV tools for HiC
+    <ul>
+      <li>LOIC [PMC6127909]</li>
+      <li>HiNT [PMC7087379]</li>
+      <li>HiCnv and OneD [ref]</li>
+    </ul>
+  </li>
+  <li><strong>No CNV tools for HiChIP data</strong></li>
+</ul>
+
+<p>Example of CNV calls on MG63.3 H3K27ac at Chr6 Regions
+<img width="1343" alt="image" src="https://github.com/user-attachments/assets/221d2413-e53b-4706-9ad4-014c69dee9a2" /></p>
+
+<h2 id="problem">Problem</h2>
+<h3 id="different-cnvs-with-different-data">Different CNVs with Different Data</h3>
+<p>HiChIP(black), ChIP-seq(blue), and ChIP-seq Input(Gold)
+<img width="708" alt="image" src="https://github.com/user-attachments/assets/eb607ed2-29f1-409d-98ca-524c0b73a796" /></p>
+
+<h3 id="different-peaks-with-different-algorithms">Different Peaks with Different Algorithms</h3>
+<ul>
+  <li>CopywriteR : non-parameteric, FDR-base, expand peaks within <strong>segment boundaries</strong></li>
+  <li>HOMER : Simple poisson model, 4-fold greater than in the surrounding 10 kb region, The maximum distance used to stitch peaks together</li>
+  <li>MACS2 : Dynamic poisson parameters (λlocal = max(λBG, λ1k, λ5k, λ10k), bad at expantion</li>
+</ul>
+
+<p>CNV score is measured after filtering peaks.</p>
+<ul>
+  <li>Peaks by CopywriteR (top), HOMER(p-53)(mid), MACS2(p-4)(bottom)
+<img width="644" alt="image" src="https://github.com/user-attachments/assets/276a317f-4318-4452-a8a9-611803a6a6b4" /></li>
+</ul>
 
 <h2 id="methods">Methods</h2>
+<p>To make the peak caller smarter</p>
+<ul>
+  <li>
+    <p>Understand CopywriteR Model</p>
+  </li>
+  <li>Modify the CopywriteR algorithm (reduce peak expantion)</li>
+  <li>Peak Expantion Algorithm: <a href="https://github.com/PeeperLab/CopywriteR/blob/master/R/CopywriteR.R">fullcode</a>
+    <div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">345</span><span class="w">                 </span><span class="n">retest.peak.ranges</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">apply</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="k">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="m">346</span><span class="w">                     </span><span class="n">left.lower.boundary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"start"</span><span class="p">])</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">resolution</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)))</span><span class="w">
+</span><span class="m">347</span><span class="w">                     </span><span class="n">left.higher.boundary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"start"</span><span class="p">])</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">
+</span><span class="m">348</span><span class="w">                     </span><span class="n">right.lower.boundary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">[</span><span class="n">selection</span><span class="p">],</span><span class="w">
+</span><span class="m">349</span><span class="w">                                                 </span><span class="p">(</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"end"</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">))</span><span class="w">
+</span><span class="m">350</span><span class="w">                     </span><span class="n">right.higher.boundary</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="n">chromosomes</span><span class="p">[</span><span class="n">selection</span><span class="p">],</span><span class="w">
+</span><span class="m">351</span><span class="w">                                                  </span><span class="p">(</span><span class="nf">as.integer</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">"end"</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">resolution</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">1</span><span class="p">)))</span><span class="w">
+</span><span class="m">352</span><span class="w">                     </span><span class="n">left.peakCutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ceiling</span><span class="p">(</span><span class="n">.peakCutoff</span><span class="p">(</span><span class="n">cov.chr</span><span class="p">[</span><span class="n">left.lower.boundary</span><span class="o">:</span><span class="n">left.higher.boundary</span><span class="p">],</span><span class="n">fdr.cutoff</span><span class="o">=</span><span class="n">FDRT</span><span class="p">))</span><span class="w">
+</span><span class="m">353</span><span class="w">                     </span><span class="n">right.peakCutoff</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">ceiling</span><span class="p">(</span><span class="n">.peakCutoff</span><span class="p">(</span><span class="n">cov.chr</span><span class="p">[</span><span class="n">right.lower.boundary</span><span class="o">:</span><span class="n">right.higher.boundary</span><span class="p">],</span><span class="n">fdr.cutoff</span><span class="o">=</span><span class="n">FDRT</span><span class="p">))</span><span class="w">
+</span></code></pre></div>    </div>
+    <blockquote>
+      <p>The original algorithm uses FDR=0.1 for adding peaks
+Applied stringent FDRT=0.0001</p>
+    </blockquote>
+  </li>
+</ul>
 
-\[log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + + \epsilon\]
+<h2 id="results">Results</h2>
+<ul>
+  <li>Recovered CNV calling at 5’ body of SCIRT 
+<img width="1316" alt="image" src="https://github.com/user-attachments/assets/c2469821-5c32-4c47-ae33-e0ca53ae5abc" /></li>
+</ul>
 
-<h3 id="copywriter-algorithm">CopywriteR Algorithm</h3>]]></content><author><name></name></author><category term="cnv" /><category term="hichip" /><summary type="html"><![CDATA[Background Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974]. DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. This ensures that only copy number enrichment unaffected by specific binding event, are retained. The peak calling outcomes are highly dependent on the specific algorithm used. Most ChIP-seq and ATAC-seq peak callers are not optimized for detecting complex, non-symmetric peak forms. For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..].]]></summary></entry><entry><title type="html">Single-cell SeqWell DATA with cNMF</title><link href="http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1.html" rel="alternate" type="text/html" title="Single-cell SeqWell DATA with cNMF" /><published>2024-09-07T11:55:38-04:00</published><updated>2024-09-07T11:55:38-04:00</updated><id>http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1</id><content type="html" xml:base="http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1.html"><![CDATA[<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+<h2 id="discussion">Discussion</h2>
+<ul>
+  <li>
+    <p>Loops are good indicators CNV?
+<img width="1300" alt="image" src="https://github.com/user-attachments/assets/0c3fe4e2-7432-4d3b-8c75-ed3a02f904df" /></p>
+  </li>
+  <li>
+    <p>New model
+\(log(C) = \beta_0( GCcontent ) + \beta_1( Mappability ) + \beta_2(3Dcontact) \epsilon\)</p>
+  </li>
+  <li>
+    <p>Other examples
+<img width="691" alt="image" src="https://github.com/user-attachments/assets/f4273b16-13a0-4bcc-a597-86d98a2bc32a" />
+<img width="627" alt="image" src="https://github.com/user-attachments/assets/b7d3ff8a-aa0c-44b5-bd2e-106c17ae91ab" /></p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="cnv" /><category term="hichip" /><summary type="html"><![CDATA[Background Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974]. DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. The peak calling outcomes are highly dependent on the specific algorithm used. Most ChIP-seq and ATAC-seq peak callers are not designed for detecting complex, non-symmetric peak patterns. For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..]. Pol2 .. There are some CNV tools for HiC LOIC [PMC6127909] HiNT [PMC7087379] HiCnv and OneD [ref] No CNV tools for HiChIP data]]></summary></entry><entry><title type="html">Single-cell SeqWell DATA with cNMF</title><link href="/cnmf/single-cell/2024/09/07/cnmf-cns-1.html" rel="alternate" type="text/html" title="Single-cell SeqWell DATA with cNMF" /><published>2024-09-07T11:55:38-04:00</published><updated>2024-09-07T11:55:38-04:00</updated><id>/cnmf/single-cell/2024/09/07/cnmf-cns-1</id><content type="html" xml:base="/cnmf/single-cell/2024/09/07/cnmf-cns-1.html"><![CDATA[<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span><span class="w">
 </span><span class="n">options</span><span class="p">(</span><span class="n">bitmapType</span><span class="o">=</span><span class="s1">'cairo'</span><span class="p">)</span><span class="w">
 </span><span class="n">options</span><span class="p">(</span><span class="n">future.globals.maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w">
