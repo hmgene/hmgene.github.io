@@ -1,3 +1,11 @@
-
-ecDNA [31748743].
-ecDNA hubs are tethered by the BET protein BRD4 in a MYC-amplified colorectal cancer cell line 34819668
+---
+layout: post
+title:  "Copy Number Variation and ecDNA effets Using HiChIP Data"
+date:   2024-09-21 11:54:38 -0400
+categories: cnv hichip ecdna
+---
+## Background
+- ecDNA [31748743].
+- In a MYC-amplified colorectal cancer cell line, ecDNA hubs are tethered by the BET protein BRD4 [34819668]. 
+- Using HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) [31748743], we examine 3D contacts and the effects of copy number variation (CNV). 
+- We hypothesize that HiChIP can accurately infer CNV and ecDNA contributions, providing precise CNV signals.
