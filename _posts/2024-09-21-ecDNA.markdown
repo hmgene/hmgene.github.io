@@ -8,7 +8,8 @@ categories: cnv hichip ecdna
 - Bioinformatics tools
   - [38746056](https://pubmed.ncbi.nlm.nih.gov/38746056/) 
   - [39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/)
-![screenshot 39209966](https://www.nature.com/articles/s41388-024-03138-6/figures/4)
+
+![screenshot 39209966]([https://www.nature.com/articles/s41388-024-03138-6/figures/4](https://media.springernature.com/full/springer-static/image/art%3A10.1038%2Fs41388-024-03138-6/MediaObjects/41388_2024_3138_Fig4_HTML.png?as=webp))
 
 - HiChIP-based tools are not available 
 - Databas [35388171](https://pubmed.ncbi.nlm.nih.gov/35388171/)
