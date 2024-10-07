@@ -5,6 +5,7 @@ date:   2024-09-21 11:54:38 -0400
 categories: cnv hichip ecdna
 ---
 ## Background
+- EGFR Glioblastoma [31761532](https://pubmed.ncbi.nlm.nih.gov/31761532/)
 - Bioinformatics tools
   - [38746056](https://pubmed.ncbi.nlm.nih.gov/38746056/) 
   - [39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/)
