@@ -7,7 +7,7 @@ categories: scrna
 - paper: https://www.biorxiv.org/content/10.1101/2024.10.03.616013v1
 - code : https://github.com/emanuelepitino/Stamp_V4 
 - takeaway: 
-  - no analysists no sequencing required.
+  - no special analysists no sequencing required.
   - RNA vs protein comparison was incomplete
   - How the trajectory applied w/ less stringent filtering affect the performance 
 
@@ -16,5 +16,6 @@ categories: scrna
 | |*STAMP*|scRNA|Spatial|
 | - | - | - | - |
 | Diss.cells | high | low | high |
-| FixedCost | Scaled w/ cells | Fixed cost | 
+| Cost | FixedCost | Scaled w/ cells | Fixed cost | 
+| Genes | Limitted to panel of known | whole transcriptome | Curated panel |
 
