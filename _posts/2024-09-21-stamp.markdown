@@ -5,6 +5,16 @@ date:   2024-09-21 11:54:38 -0400
 categories: scrna 
 ---
 - paper: https://www.biorxiv.org/content/10.1101/2024.10.03.616013v1
-- takeaway: no analysists no sequencing required.
-- 
+- code : https://github.com/emanuelepitino/Stamp_V4 
+- takeaway: 
+  - no analysists no sequencing required.
+  - RNA vs protein comparison was incomplete
+  - How the trajectory applied w/ less stringent filtering affect the performance 
+
 ![image](https://github.com/user-attachments/assets/ac802bb5-d273-4dff-b471-2972cd4117c6)
+
+| |*STAMP*|scRNA|Spatial|
+| - | - | - | - |
+| Diss.cells | high | low | high |
+| FixedCost | Scaled w/ cells | Fixed cost | 
+
