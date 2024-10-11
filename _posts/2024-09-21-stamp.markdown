@@ -4,6 +4,7 @@ title:  "Copy Number Variation and ecDNA effets Using HiChIP Data"
 date:   2024-09-21 11:54:38 -0400
 categories: scrna 
 ---
-paper: https://www.biorxiv.org/content/10.1101/2024.10.03.616013v1
-takeaway: no analysists no sequencing required.
+- paper: https://www.biorxiv.org/content/10.1101/2024.10.03.616013v1
+- takeaway: no analysists no sequencing required.
+- 
 ![image](https://github.com/user-attachments/assets/ac802bb5-d273-4dff-b471-2972cd4117c6)
