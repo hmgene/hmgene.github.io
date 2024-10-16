@@ -18,6 +18,10 @@ categories: cnv hichip ecdna
 - In a MYC-amplified colorectal cancer cell line, ecDNA hubs are tethered by the BET protein BRD4 [34819668]. 
 - Using HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) [31748743], we examine 3D contacts and the effects of copy number variation (CNV). 
 - We hypothesize that HiChIP can accurately infer CNV and ecDNA contributions, providing precise CNV signals.
+
+
+<img width="951" alt="image" src="https://github.com/user-attachments/assets/df1626f0-b014-48cd-bbbe-1840b8b4e71d">
+
 ## Methods
 - Hint : Gini-ranking  [32293513](https://pubmed.ncbi.nlm.nih.gov/32293513/)
   - github: https://github.com/parklab/HiNT
