@@ -11,6 +11,8 @@ categories: cnv hichip ecdna
   - [39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/)
 
 ![image](https://github.com/user-attachments/assets/f72be929-e57f-4cef-b5eb-159659d87412)
+<img width="1001" alt="image" src="https://github.com/user-attachments/assets/3a788d34-83e7-4684-aefc-ff8fc188d9b6">
+
 
 - HiChIP-based tools are not available 
 - Databas [35388171](https://pubmed.ncbi.nlm.nih.gov/35388171/)
