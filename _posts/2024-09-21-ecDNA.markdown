@@ -11,8 +11,7 @@ categories: cnv hichip ecdna
   - [39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/)
 
 ![image](https://github.com/user-attachments/assets/f72be929-e57f-4cef-b5eb-159659d87412)
-<img width="1001" alt="image" src="https://github.com/user-attachments/assets/3a788d34-83e7-4684-aefc-ff8fc188d9b6">
-<img width="974" alt="image" src="https://github.com/user-attachments/assets/ae2acc79-6ca1-4e0d-a878-492baa9225f2">
+
 
 
 
@@ -23,6 +22,11 @@ categories: cnv hichip ecdna
 - Using HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) [31748743], we examine 3D contacts and the effects of copy number variation (CNV). 
 - We hypothesize that HiChIP can accurately infer CNV and ecDNA contributions, providing precise CNV signals.
 
+## Results
+
+<img width="1001" alt="image" src="https://github.com/user-attachments/assets/3a788d34-83e7-4684-aefc-ff8fc188d9b6">
+
+<img width="974" alt="image" src="https://github.com/user-attachments/assets/ae2acc79-6ca1-4e0d-a878-492baa9225f2">
 
 <img width="951" alt="image" src="https://github.com/user-attachments/assets/df1626f0-b014-48cd-bbbe-1840b8b4e71d">
 
