@@ -5,7 +5,7 @@ date:   2024-09-21 11:54:38 -0400
 categories: cnv hichip ecdna
 ---
 ## Background
-- Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors [31761532](https://pubmed.ncbi.nlm.nih.gov/31761532/). 
+- Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors [cell2019scacheri](https://pubmed.ncbi.nlm.nih.gov/31761532/). 
 - These oncogenes were co-amplified with super-enhancers, not only in contiguous regions but also in more complex, non-contiguous amplicons. They are linearly broken into cis and trans genomic loci associated with oncogenes. 
 - These regulatory elements have been preserved and evolved within cells in a circular form, referred to as extra-circular DNA [cell2013korbel](https://pubmed.ncbi.nlm.nih.gov/23498933/).
 
