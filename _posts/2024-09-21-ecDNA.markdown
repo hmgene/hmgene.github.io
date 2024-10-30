@@ -8,7 +8,7 @@ categories: ecdna eccdna hichip
 - Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors [cell2019scacheri](https://pubmed.ncbi.nlm.nih.gov/31761532/). 
   - H3K27ac ChlP-seq, ATAC-seq, POLR2A ChlP-seq, and RNA-seq signals at two EGFR enhancers for four glioblastoma lines (GBM3565, GBM3094, GSC23, G459)
   - used HiChIP: GSE73865 (O’Brien et al., 2016), GSE90683 (Boeva et al., 2017) 
-- These oncogenes were co-amplified with super-enhancers, not only in contiguous regions but also in more complex, non-contiguous amplicons. They are linearly broken into cis and trans genomic loci associated with oncogenes. 
+- These oncogenes were co-amplified with super-enhancers, not only in contiguous regions but also in more complex, non-contiguous amplicons. They are linearly broken into cis and trans genomic loci associated with oncogenes [role of ecDNAs](https://pmc.ncbi.nlm.nih.gov/articles/PMC10338009/). 
 - These regulatory elements have been preserved and evolved within cells in a circular form, referred to as extra-circular DNA [cell2013korbel](https://pubmed.ncbi.nlm.nih.gov/23498933/).
 - Bioinformatics tools for analyzing whole genome sequencing (WGS) data can exhibit varying performance based on their underlying assumptions and the quality of the input data [38746056](https://pubmed.ncbi.nlm.nih.gov/38746056/),[39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/).
 
