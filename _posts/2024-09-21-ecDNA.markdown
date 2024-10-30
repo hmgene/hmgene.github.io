@@ -8,24 +8,15 @@ categories: ecdna eccdna hichip
 - Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors [cell2019scacheri](https://pubmed.ncbi.nlm.nih.gov/31761532/). 
 - These oncogenes were co-amplified with super-enhancers, not only in contiguous regions but also in more complex, non-contiguous amplicons. They are linearly broken into cis and trans genomic loci associated with oncogenes. 
 - These regulatory elements have been preserved and evolved within cells in a circular form, referred to as extra-circular DNA [cell2013korbel](https://pubmed.ncbi.nlm.nih.gov/23498933/).
-
-
-
-- Bioinformatics tools
-  - [38746056](https://pubmed.ncbi.nlm.nih.gov/38746056/) 
-  - [39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/)
+- Bioinformatics tools for analyzing whole genome sequencing (WGS) data can exhibit varying performance based on their underlying assumptions and the quality of the input data [38746056(https://pubmed.ncbi.nlm.nih.gov/38746056/),[39209966](https://pubmed.ncbi.nlm.nih.gov/39209966/).
 
 ![image](https://github.com/user-attachments/assets/f72be929-e57f-4cef-b5eb-159659d87412)
 
-
-
-
-- HiChIP-based tools are not available 
-- Databas [35388171](https://pubmed.ncbi.nlm.nih.gov/35388171/)
-- ecDNA [31748743].
-- In a MYC-amplified colorectal cancer cell line, ecDNA hubs are tethered by the BET protein BRD4 [34819668]. 
-- Using HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) [31748743], we examine 3D contacts and the effects of copy number variation (CNV). 
-- We hypothesize that HiChIP can accurately infer CNV and ecDNA contributions, providing precise CNV signals.
+## Public Datasets
+- Database [35388171](https://pubmed.ncbi.nlm.nih.gov/35388171/)
+- ecDNA HiChIP datasets [31748743](https://pubmed.ncbi.nlm.nih.gov/31748743/).
+- MYC-amplified colorectal cancer cell line, ecDNA hubs are tethered by the BET protein BRD4 [34819668](https://pubmed.ncbi.nlm.nih.gov/34819668/). 
+- HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) [31748743](https://pubmed.ncbi.nlm.nih.gov/31748743/).
 
 ## Results
 
