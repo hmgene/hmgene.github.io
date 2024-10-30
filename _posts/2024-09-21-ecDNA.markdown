@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Copy Number Variation and ecDNA effets Using HiChIP Data"
-date:   2024-09-21 11:54:38 -0400
-categories: cnv hichip ecdna
+title:  "ecDNA Prediction Using HiChIP Data"
+date:   2024-10-30 11:54:38 -0400
+categories: ecdna eccdna hichip
 ---
 ## Background
 - Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors [cell2019scacheri](https://pubmed.ncbi.nlm.nih.gov/31761532/). 
