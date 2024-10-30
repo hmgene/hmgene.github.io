@@ -23,8 +23,9 @@ categories: ecdna eccdna hichip
 - Assortativity (https://networkx.org/nx-guides/content/algorithms/assortativity/correlation.html)
 <img width="612" alt="image" src="https://github.com/user-attachments/assets/0a714500-502b-43d8-914c-a9ba7586d611">
 - Developed Human-Machine Tool
-| ![Image 1](https://github.com/user-attachments/assets/c58da3e8-0834-4def-a70a-c3432ec521e8) | ![Image 2](https://github.com/user-attachments/assets/c818ca2b-624b-4c66-804d-0a1da85bc403) | ![Image 3](https://github.com/user-attachments/assets/b4134233-7264-4ee4-ac18-86eb0078b451) |
+
 |:---:|:---:|:---:|
+| ![Image 1](https://github.com/user-attachments/assets/c58da3e8-0834-4def-a70a-c3432ec521e8) | ![Image 2](https://github.com/user-attachments/assets/c818ca2b-624b-4c66-804d-0a1da85bc403) | ![Image 3](https://github.com/user-attachments/assets/b4134233-7264-4ee4-ac18-86eb0078b451) |
 
 <img width="755" alt="image" src="https://github.com/user-attachments/assets/c58da3e8-0834-4def-a70a-c3432ec521e8">
 <img width="698" alt="image" src="https://github.com/user-attachments/assets/c818ca2b-624b-4c66-804d-0a1da85bc403">
