@@ -18,9 +18,9 @@ categories: ecdna eccdna hichip
 
 <img width="612" alt="image" src="https://github.com/user-attachments/assets/0a714500-502b-43d8-914c-a9ba7586d611">
 
-- Hint : Gini-ranking  [32293513](https://pubmed.ncbi.nlm.nih.gov/32293513/)
+- Hint : Gini-ranking [32293513](https://pubmed.ncbi.nlm.nih.gov/32293513/)
   - github: https://github.com/parklab/HiNT
-- Developed App http://172.20.48.147:8501
+- Developed App [go](http://172.20.48.147:8501)
 
 <div style="display: flex; justify-content: space-around;">
     <img src="https://github.com/user-attachments/assets/c58da3e8-0834-4def-a70a-c3432ec521e8" width="250" alt="Image 1">
