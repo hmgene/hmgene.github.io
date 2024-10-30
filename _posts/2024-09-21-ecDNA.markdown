@@ -18,6 +18,15 @@ categories: ecdna eccdna hichip
 - MYC-amplified colorectal cancer cell line, ecDNA hubs are tethered by the BET protein BRD4 [34819668](https://pubmed.ncbi.nlm.nih.gov/34819668/). 
 - HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) [31748743](https://pubmed.ncbi.nlm.nih.gov/31748743/).
 
+## Methods
+- Convert contacts to network
+- Assortativity 
+ ![fromwiki](https://en.wikipedia.org/wiki/File:Scale-free_networks_for_different_degrees_of_assortativity.jpg)
+- Developed Human-Machine Tool
+
+<img width="784" alt="image" src="https://github.com/user-attachments/assets/6a964c00-4db1-4211-b1d5-88036f391b24">
+
+
 ## Results
 
 <img width="1001" alt="image" src="https://github.com/user-attachments/assets/3a788d34-83e7-4684-aefc-ff8fc188d9b6">
