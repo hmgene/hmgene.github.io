@@ -39,6 +39,10 @@ kramdown:
   input: GFM
   math_engine: mathjax
 
+header_pages:
+  - about.md
+  - project.md
+  - cv.md
 
 # Exclude from processing.
 # The following items will not be processed, by default.

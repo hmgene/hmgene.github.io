@@ -46,7 +46,10 @@ sections:
     items:
       - skill: Languages
         category: Programming Language
-        name: Perl,R,Python,Golang 
+        name: Bash, Perl, R, Python, C/C++, Golang,
       - skill: Languages
         category: Workflow
         name: WDL, Nextflow
+      - skill: Languages
+        category: WebDB
+        name: MySQL, WDL, Nextflow, Streamlit

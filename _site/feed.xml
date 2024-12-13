@@ -1,4 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-09-19T14:12:52-04:00</updated><id>/feed.xml</id><title type="html">Hyunmin Kim, Ph.D</title><subtitle>Bioinformaticist, who believes Bio=Information, am interested in Cellular programming via epigenomic and transcriptomic gene regulations.</subtitle><entry><title type="html">Predict Copy Number Variation Using HiChIP Data</title><link href="/cnv/hichip/2024/09/08/cnv-hichip-1.html" rel="alternate" type="text/html" title="Predict Copy Number Variation Using HiChIP Data" /><published>2024-09-08T11:54:38-04:00</published><updated>2024-09-08T11:54:38-04:00</updated><id>/cnv/hichip/2024/09/08/cnv-hichip-1</id><content type="html" xml:base="/cnv/hichip/2024/09/08/cnv-hichip-1.html"><![CDATA[<h2 id="background">Background</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2024-12-13T12:15:52-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Hyunmin Kim, Ph.D</title><subtitle>Bioinformaticist, who believes Bio=Information, am interested in Cellular programming via epigenomic and transcriptomic gene regulations.</subtitle><entry><title type="html">ecDNA Prediction Using HiChIP Data</title><link href="http://localhost:4000/ecdna/eccdna/hichip/2024/10/30/ecDNA.html" rel="alternate" type="text/html" title="ecDNA Prediction Using HiChIP Data" /><published>2024-10-30T11:54:38-04:00</published><updated>2024-10-30T11:54:38-04:00</updated><id>http://localhost:4000/ecdna/eccdna/hichip/2024/10/30/ecDNA</id><content type="html" xml:base="http://localhost:4000/ecdna/eccdna/hichip/2024/10/30/ecDNA.html"><![CDATA[<h2 id="background">Background</h2>
+<ul>
+  <li>Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors <a href="https://pubmed.ncbi.nlm.nih.gov/31761532/">cell2019scacheri</a>.
+    <ul>
+      <li>H3K27ac ChlP-seq, ATAC-seq, POLR2A ChlP-seq, and RNA-seq signals at two EGFR enhancers for four glioblastoma lines (GBM3565, GBM3094, GSC23, G459)</li>
+      <li>used HiChIP: GSE73865 (O’Brien et al., 2016), GSE90683 (Boeva et al., 2017)</li>
+    </ul>
+  </li>
+  <li>These oncogenes were co-amplified with super-enhancers, not only in contiguous regions but also in more complex, non-contiguous amplicons. They are linearly broken into cis and trans genomic loci associated with oncogenes <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10338009/">role of ecDNAs</a>.</li>
+  <li>These regulatory elements have been preserved and evolved within cells in a circular form, referred to as extra-circular DNA <a href="https://pubmed.ncbi.nlm.nih.gov/23498933/">cell2013korbel</a>.</li>
+  <li>Bioinformatics tools for analyzing whole genome sequencing (WGS) data can exhibit varying performance based on their underlying assumptions and the quality of the input data <a href="https://pubmed.ncbi.nlm.nih.gov/38746056/">38746056</a>,<a href="https://pubmed.ncbi.nlm.nih.gov/39209966/">39209966</a>.</li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/f72be929-e57f-4cef-b5eb-159659d87412" alt="image" /></p>
+
+<h2 id="methods">Methods</h2>
+<ul>
+  <li>Convert contacts to network</li>
+  <li>Assortativity (https://networkx.org/nx-guides/content/algorithms/assortativity/correlation.html)</li>
+</ul>
+
+<p><img width="612" alt="image" src="https://github.com/user-attachments/assets/0a714500-502b-43d8-914c-a9ba7586d611" /></p>
+
+<ul>
+  <li>Hint : Gini-ranking <a href="https://pubmed.ncbi.nlm.nih.gov/32293513/">32293513</a>
+    <ul>
+      <li>github: https://github.com/parklab/HiNT</li>
+    </ul>
+  </li>
+  <li>Developed App <a href="http://172.20.48.147:8501">go</a></li>
+</ul>
+
+<div style="display: flex; justify-content: space-around;">
+    <img src="https://github.com/user-attachments/assets/c58da3e8-0834-4def-a70a-c3432ec521e8" width="250" alt="Image 1" />
+    <img src="https://github.com/user-attachments/assets/c818ca2b-624b-4c66-804d-0a1da85bc403" width="250" alt="Image 2" />
+    <img src="https://github.com/user-attachments/assets/b4134233-7264-4ee4-ac18-86eb0078b451" width="250" alt="Image 3" />
+</div>
+
+<h2 id="public-datasets">Public Datasets</h2>
+<ul>
+  <li>Database <a href="https://pubmed.ncbi.nlm.nih.gov/35388171/">35388171</a></li>
+  <li>ecDNA HiChIP datasets <a href="https://pubmed.ncbi.nlm.nih.gov/31748743/">31748743</a>.</li>
+  <li>MYC-amplified colorectal cancer cell line, ecDNA hubs are tethered by the BET protein BRD4 <a href="https://pubmed.ncbi.nlm.nih.gov/34819668/">34819668</a>.</li>
+  <li>HiChIP datasets from SNU16 cells (amplified for MYC and FGFR2) <a href="https://pubmed.ncbi.nlm.nih.gov/31748743/">31748743</a>.</li>
+</ul>
+
+<h1 id="previous-results">Previous Results</h1>
+
+<h2 id="results">Results</h2>
+
+<p><img width="1001" alt="image" src="https://github.com/user-attachments/assets/3a788d34-83e7-4684-aefc-ff8fc188d9b6" /></p>
+
+<p><img width="974" alt="image" src="https://github.com/user-attachments/assets/ae2acc79-6ca1-4e0d-a878-492baa9225f2" /></p>
+
+<p><img width="951" alt="image" src="https://github.com/user-attachments/assets/df1626f0-b014-48cd-bbbe-1840b8b4e71d" /></p>
+
+<h2 id="methods-1">Methods</h2>
+<ul>
+  <li>Hint : Gini-ranking  <a href="https://pubmed.ncbi.nlm.nih.gov/32293513/">32293513</a>
+    <ul>
+      <li>github: https://github.com/parklab/HiNT</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="code-anlysis">Code Anlysis</h2>
+
+<p>The Hint source code (https://github.com/parklab/HiNT):</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span><span class="w"> </span><span class="n">gini</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="w">
+    </span><span class="c1"># (Warning: This is a concise implementation, but it is O(n**2)</span><span class="w">
+    </span><span class="c1"># in time and memory, where n = len(x).  *Don't* pass in huge</span><span class="w">
+    </span><span class="c1"># samples!)</span><span class="w">
+
+    </span><span class="c1"># Mean absolute difference</span><span class="w">
+    </span><span class="n">mad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.nanmean</span><span class="p">(</span><span class="n">np.abs</span><span class="p">(</span><span class="n">np.subtract.outer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">)))</span><span class="w">
+    </span><span class="c1"># Relative mean absolute difference</span><span class="w">
+    </span><span class="n">rmad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mad</span><span class="o">/</span><span class="n">np.nanmean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w">
+    </span><span class="c1"># Gini coefficient</span><span class="w">
+    </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">rmad</span><span class="w">
+    </span><span class="n">return</span><span class="w"> </span><span class="n">g</span><span class="w">
+
+</span><span class="n">def</span><span class="w"> </span><span class="n">getGini</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">mat2</span><span class="p">)</span><span class="o">:</span><span class="w">
+    </span><span class="n">matrix1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.genfromtxt</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span><span class="w">
+    </span><span class="n">matrix2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.genfromtxt</span><span class="p">(</span><span class="n">mat2</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">"\t"</span><span class="p">)</span><span class="w">
+    </span><span class="n">matrix1</span><span class="p">[</span><span class="n">np.isfinite</span><span class="p">(</span><span class="n">matrix1</span><span class="p">)</span><span class="o">==</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">
+    </span><span class="n">matrix2</span><span class="p">[</span><span class="n">np.isfinite</span><span class="p">(</span><span class="n">matrix2</span><span class="p">)</span><span class="o">==</span><span class="m">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="w">
+    </span><span class="n">rowsum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.sum</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
+    </span><span class="n">rowsum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.sum</span><span class="p">(</span><span class="n">matrix2</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="m">1</span><span class="p">)</span><span class="w">
+    </span><span class="n">colsum1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.sum</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">colsum2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.sum</span><span class="p">(</span><span class="n">matrix2</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">ridx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.where</span><span class="p">(</span><span class="n">rowsum1</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">cidx1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.where</span><span class="p">(</span><span class="n">colsum1</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">ridx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.where</span><span class="p">(</span><span class="n">rowsum2</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">cidx2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.where</span><span class="p">(</span><span class="n">colsum2</span><span class="o">==</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">ridx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.union1d</span><span class="p">(</span><span class="n">ridx1</span><span class="p">[</span><span class="m">0</span><span class="p">],</span><span class="w"> </span><span class="n">ridx2</span><span class="p">[</span><span class="m">0</span><span class="p">])</span><span class="w">
+    </span><span class="n">cidx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.union1d</span><span class="p">(</span><span class="n">cidx1</span><span class="p">[</span><span class="m">0</span><span class="p">],</span><span class="w"> </span><span class="n">cidx2</span><span class="p">[</span><span class="m">0</span><span class="p">])</span><span class="w">
+
+    </span><span class="n">temp1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.delete</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span><span class="n">ridx</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">temp2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.delete</span><span class="p">(</span><span class="n">matrix2</span><span class="p">,</span><span class="n">ridx</span><span class="p">,</span><span class="m">0</span><span class="p">)</span><span class="w">
+    </span><span class="n">selectedData1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.delete</span><span class="p">(</span><span class="n">temp1</span><span class="p">,</span><span class="n">cidx</span><span class="p">,</span><span class="m">1</span><span class="p">)</span><span class="w">
+    </span><span class="n">selectedData2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.delete</span><span class="p">(</span><span class="n">temp2</span><span class="p">,</span><span class="n">cidx</span><span class="p">,</span><span class="m">1</span><span class="p">)</span><span class="w">
+
+    </span><span class="n">average1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.mean</span><span class="p">(</span><span class="n">selectedData1</span><span class="p">)</span><span class="w">
+    </span><span class="n">average2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.mean</span><span class="p">(</span><span class="n">selectedData2</span><span class="p">)</span><span class="w">
+    </span><span class="n">tm1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.divide</span><span class="p">(</span><span class="n">selectedData1</span><span class="p">,</span><span class="n">average1</span><span class="p">)</span><span class="w">
+    </span><span class="n">tm2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.divide</span><span class="p">(</span><span class="n">selectedData2</span><span class="p">,</span><span class="n">average2</span><span class="p">)</span><span class="w">
+    </span><span class="n">division</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.divide</span><span class="p">(</span><span class="n">tm1</span><span class="p">,</span><span class="n">tm2</span><span class="p">)</span><span class="w">
+    </span><span class="n">giniIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">gini</span><span class="p">(</span><span class="n">np.asarray</span><span class="p">(</span><span class="n">division</span><span class="p">)</span><span class="n">.reshape</span><span class="p">(</span><span class="m">-1</span><span class="p">))</span><span class="w">
+    </span><span class="n">maximum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.nanmax</span><span class="p">(</span><span class="n">np.asarray</span><span class="p">(</span><span class="n">division</span><span class="p">)</span><span class="n">.reshape</span><span class="p">(</span><span class="m">-1</span><span class="p">))</span><span class="w">
+
+    </span><span class="n">return</span><span class="w"> </span><span class="n">giniIndex</span><span class="p">,</span><span class="n">maximum</span><span class="w">
+
+</span><span class="n">def</span><span class="w"> </span><span class="n">getRankProduct</span><span class="p">(</span><span class="n">matrix1MbInfo</span><span class="p">,</span><span class="n">background1MbInfo</span><span class="p">,</span><span class="n">outdir</span><span class="p">,</span><span class="n">name</span><span class="p">)</span><span class="o">:</span><span class="w">
+    </span><span class="n">rpout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">os.path.join</span><span class="p">(</span><span class="n">outdir</span><span class="p">,</span><span class="n">name</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'_chrompairs_rankProduct.txt'</span><span class="p">)</span><span class="w">
+    </span><span class="n">outf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">open</span><span class="p">(</span><span class="n">rpout</span><span class="p">,</span><span class="s1">'w'</span><span class="p">)</span><span class="w">
+    </span><span class="n">ginis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="n">maximums</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="n">chrompairs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="k">for</span><span class="w"> </span><span class="n">chrompair</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">matrix1MbInfo</span><span class="o">:</span><span class="w">
+        </span><span class="c1">#print chrompair</span><span class="w">
+        </span><span class="n">matrix1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">matrix1MbInfo</span><span class="p">[</span><span class="n">chrompair</span><span class="p">]</span><span class="w">
+        </span><span class="n">matrix2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">background1MbInfo</span><span class="p">[</span><span class="n">chrompair</span><span class="p">]</span><span class="w">
+        </span><span class="n">giniIndex</span><span class="p">,</span><span class="n">maximum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getGini</span><span class="p">(</span><span class="n">matrix1</span><span class="p">,</span><span class="n">matrix2</span><span class="p">)</span><span class="w">
+        </span><span class="n">chrompairs.append</span><span class="p">(</span><span class="n">chrompair</span><span class="p">)</span><span class="w">
+        </span><span class="n">ginis.append</span><span class="p">(</span><span class="n">giniIndex</span><span class="p">)</span><span class="w">
+        </span><span class="n">maximums.append</span><span class="p">(</span><span class="n">maximum</span><span class="p">)</span><span class="w">
+    </span><span class="n">rankgini</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">ginis</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rankdata</span><span class="p">(</span><span class="n">ginis</span><span class="p">)</span><span class="w">
+    </span><span class="n">rankmaximum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">maximums</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">rankdata</span><span class="p">(</span><span class="n">maximums</span><span class="p">)</span><span class="w">
+    </span><span class="c1">#print rankgini,rankmaximum</span><span class="w">
+    </span><span class="n">rps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">np.divide</span><span class="p">(</span><span class="n">rankgini</span><span class="p">,</span><span class="n">len</span><span class="p">(</span><span class="n">ginis</span><span class="p">)</span><span class="o">*</span><span class="m">1.0</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np.divide</span><span class="p">(</span><span class="n">rankmaximum</span><span class="p">,</span><span class="n">len</span><span class="p">(</span><span class="n">maximums</span><span class="p">)</span><span class="o">*</span><span class="m">1.0</span><span class="p">))</span><span class="w">
+    </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">np.stack</span><span class="p">((</span><span class="n">chrompairs</span><span class="p">,</span><span class="n">ginis</span><span class="p">,</span><span class="n">maximums</span><span class="p">,</span><span class="n">rps</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="m">-1</span><span class="p">)</span><span class="w">
+    </span><span class="n">sortedResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sorted</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="o">=</span><span class="n">itemgetter</span><span class="p">(</span><span class="m">-1</span><span class="p">))</span><span class="w">
+    </span><span class="n">outf.write</span><span class="p">(</span><span class="s1">'\t'</span><span class="n">.join</span><span class="p">([</span><span class="s1">'ChromPair'</span><span class="p">,</span><span class="s2">"GiniIndex"</span><span class="p">,</span><span class="s2">"Maximum"</span><span class="p">,</span><span class="s2">"RankProduct"</span><span class="p">])</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'\n'</span><span class="p">)</span><span class="w">
+    </span><span class="k">for</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">sortedResult</span><span class="o">:</span><span class="w">
+        </span><span class="n">chrompair</span><span class="p">,</span><span class="w"> </span><span class="n">gini</span><span class="p">,</span><span class="w"> </span><span class="n">maximum</span><span class="p">,</span><span class="w"> </span><span class="n">rp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">res</span><span class="w">
+        </span><span class="n">newres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="n">chrompair</span><span class="p">,</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">gini</span><span class="p">),</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">maximum</span><span class="p">),</span><span class="w"> </span><span class="n">str</span><span class="p">(</span><span class="n">rp</span><span class="p">)]</span><span class="w">
+        </span><span class="n">outf.write</span><span class="p">(</span><span class="s1">'\t'</span><span class="n">.join</span><span class="p">(</span><span class="n">newres</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">'\n'</span><span class="p">)</span><span class="w">
+    </span><span class="n">outf.close</span><span class="p">()</span><span class="w">
+   
+    </span><span class="n">return</span><span class="w"> </span><span class="n">rpout</span><span class="w">
+
+</span></code></pre></div></div>]]></content><author><name></name></author><category term="ecdna" /><category term="eccdna" /><category term="hichip" /><summary type="html"><![CDATA[Background Focal amplification involving enhancers and target oncogenes has been observed in many cancers, such as EGFR in glioblastoma, MYC in group 3 medulloblastoma, and MYCN in both neuroblastoma and Wilms tumors cell2019scacheri. H3K27ac ChlP-seq, ATAC-seq, POLR2A ChlP-seq, and RNA-seq signals at two EGFR enhancers for four glioblastoma lines (GBM3565, GBM3094, GSC23, G459) used HiChIP: GSE73865 (O’Brien et al., 2016), GSE90683 (Boeva et al., 2017) These oncogenes were co-amplified with super-enhancers, not only in contiguous regions but also in more complex, non-contiguous amplicons. They are linearly broken into cis and trans genomic loci associated with oncogenes role of ecDNAs. These regulatory elements have been preserved and evolved within cells in a circular form, referred to as extra-circular DNA cell2013korbel. Bioinformatics tools for analyzing whole genome sequencing (WGS) data can exhibit varying performance based on their underlying assumptions and the quality of the input data 38746056,39209966.]]></summary></entry><entry><title type="html">Copy Number Variation and ecDNA effets Using HiChIP Data</title><link href="http://localhost:4000/scrna/2024/09/21/stamp.html" rel="alternate" type="text/html" title="Copy Number Variation and ecDNA effets Using HiChIP Data" /><published>2024-09-21T11:54:38-04:00</published><updated>2024-09-21T11:54:38-04:00</updated><id>http://localhost:4000/scrna/2024/09/21/stamp</id><content type="html" xml:base="http://localhost:4000/scrna/2024/09/21/stamp.html"><![CDATA[<ul>
+  <li>paper: https://www.biorxiv.org/content/10.1101/2024.10.03.616013v1</li>
+  <li>code : https://github.com/emanuelepitino/Stamp_V4</li>
+  <li>takeaway:
+    <ul>
+      <li>no special analysists no sequencing required.</li>
+      <li>RNA vs protein comparison was incomplete</li>
+      <li>How the trajectory applied w/ less stringent filtering affect the performance</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://github.com/user-attachments/assets/ac802bb5-d273-4dff-b471-2972cd4117c6" alt="image" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th><em>STAMP</em></th>
+      <th>scRNA</th>
+      <th>Spatial</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Diss.cells</td>
+      <td>high</td>
+      <td>low</td>
+      <td>high</td>
+    </tr>
+    <tr>
+      <td>Cost</td>
+      <td>FixedCost</td>
+      <td>Scaled w/ cells</td>
+      <td>Fixed cost</td>
+    </tr>
+    <tr>
+      <td>Genes</td>
+      <td>Limitted to panel of known</td>
+      <td>whole transcriptome</td>
+      <td>Curated panel</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="scrna" /><summary type="html"><![CDATA[paper: https://www.biorxiv.org/content/10.1101/2024.10.03.616013v1 code : https://github.com/emanuelepitino/Stamp_V4 takeaway: no special analysists no sequencing required. RNA vs protein comparison was incomplete How the trajectory applied w/ less stringent filtering affect the performance]]></summary></entry><entry><title type="html">Predict Copy Number Variation Using HiChIP Data</title><link href="http://localhost:4000/cnv/hichip/2024/09/08/cnv-hichip-1.html" rel="alternate" type="text/html" title="Predict Copy Number Variation Using HiChIP Data" /><published>2024-09-08T11:54:38-04:00</published><updated>2024-09-08T11:54:38-04:00</updated><id>http://localhost:4000/cnv/hichip/2024/09/08/cnv-hichip-1</id><content type="html" xml:base="http://localhost:4000/cnv/hichip/2024/09/08/cnv-hichip-1.html"><![CDATA[<h2 id="background">Background</h2>
 <ul>
   <li>Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].</li>
   <li>DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals.</li>
@@ -87,7 +271,7 @@ Applied stringent FDRT=0.0001</p>
 <img width="691" alt="image" src="https://github.com/user-attachments/assets/f4273b16-13a0-4bcc-a597-86d98a2bc32a" />
 <img width="627" alt="image" src="https://github.com/user-attachments/assets/b7d3ff8a-aa0c-44b5-bd2e-106c17ae91ab" /></p>
   </li>
-</ul>]]></content><author><name></name></author><category term="cnv" /><category term="hichip" /><summary type="html"><![CDATA[Background Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974]. DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. The peak calling outcomes are highly dependent on the specific algorithm used. Most ChIP-seq and ATAC-seq peak callers are not designed for detecting complex, non-symmetric peak patterns. For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..]. Pol2 .. There are some CNV tools for HiC LOIC [PMC6127909] HiNT [PMC7087379] HiCnv and OneD [ref] No CNV tools for HiChIP data]]></summary></entry><entry><title type="html">Single-cell SeqWell DATA with cNMF</title><link href="/cnmf/single-cell/2024/09/07/cnmf-cns-1.html" rel="alternate" type="text/html" title="Single-cell SeqWell DATA with cNMF" /><published>2024-09-07T11:55:38-04:00</published><updated>2024-09-07T11:55:38-04:00</updated><id>/cnmf/single-cell/2024/09/07/cnmf-cns-1</id><content type="html" xml:base="/cnmf/single-cell/2024/09/07/cnmf-cns-1.html"><![CDATA[<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
+</ul>]]></content><author><name></name></author><category term="cnv" /><category term="hichip" /><summary type="html"><![CDATA[Background Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974]. DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. The peak calling outcomes are highly dependent on the specific algorithm used. Most ChIP-seq and ATAC-seq peak callers are not designed for detecting complex, non-symmetric peak patterns. For instance, H3K4me3 peaks are typically sharply localized, while H3K4me1/3 peaks span broader domains. H3K27ac marks both large regions, such as super-enhancers, and smaller, discrete regions like promoters, exhibiting both broad and narrow peak characteristics [35788238][ref..]. Pol2 .. There are some CNV tools for HiC LOIC [PMC6127909] HiNT [PMC7087379] HiCnv and OneD [ref] No CNV tools for HiChIP data]]></summary></entry><entry><title type="html">Single-cell SeqWell DATA with cNMF</title><link href="http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1.html" rel="alternate" type="text/html" title="Single-cell SeqWell DATA with cNMF" /><published>2024-09-07T11:55:38-04:00</published><updated>2024-09-07T11:55:38-04:00</updated><id>http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1</id><content type="html" xml:base="http://localhost:4000/cnmf/single-cell/2024/09/07/cnmf-cns-1.html"><![CDATA[<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span><span class="w">
 </span><span class="n">library</span><span class="p">(</span><span class="n">Seurat</span><span class="p">)</span><span class="w">
 </span><span class="n">options</span><span class="p">(</span><span class="n">bitmapType</span><span class="o">=</span><span class="s1">'cairo'</span><span class="p">)</span><span class="w">
 </span><span class="n">options</span><span class="p">(</span><span class="n">future.globals.maxSize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">8000</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="m">1024</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="w">
