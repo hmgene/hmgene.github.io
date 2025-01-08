@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CNV-HiCHIP: Performance Comparisons"
+title:  "CNV-HiCHIP Performance Comparisons"
 date:   2025-01-08 11:54:38 -0400
 categories: cnv hichip
 ---
