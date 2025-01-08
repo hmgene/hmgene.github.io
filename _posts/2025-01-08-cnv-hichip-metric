@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "CNV-HiCHIP: Performance Comparisons"
+date:   2025-01-08 11:54:38 -0400
+categories: cnv hichip
+---
+
+Off-target CNV prediction with 
+1. ChIP-seq Input : gold standard
+2. ChIP-seq Treatment : standard
+3. HiChIP Treatment : treating as ChIP-seq data
+4. HiChIP Treatment Loop : using looping information only (Neoloop)
+
+
+
+
