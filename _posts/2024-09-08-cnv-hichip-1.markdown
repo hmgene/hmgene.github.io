@@ -5,6 +5,7 @@ date:   2024-09-08 11:54:38 -0400
 categories: cnv hichip
 ---
 
+
 ## Background
 - Depth of coverage (DOC), off-target CNV approaches have been applied to exome and ChIP-seq data [PMC9039557][PMC4396974].
 - DOC-off-target methods require filtering out peak regions when using non-input immunoprecipitation (IP) samples to avoid off-target binding signals. 
