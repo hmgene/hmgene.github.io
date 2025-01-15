@@ -26,7 +26,7 @@ categories: cnv hichip
 - FN segments : Input CNV > 1 and  Target CNV - Input CNV < - 0.5
 - Signals (Color) : normalized log2 FC ( after correcting GC bias, Off-target, mappability)
 
-Table
+**Summary**
 
 | Sample | number | length distribution |
 |---|---|---|
@@ -38,3 +38,28 @@ Table
 | region_tp_MG63_HiChIP.bed | 188 | |
 
 <img width="335" alt="image" src="https://github.com/user-attachments/assets/f6a5c71d-4641-4e4f-a820-67b9e31ce1db" />
+
+**FN bed***
+```
+chr1	122500001	124780000
+chr1	143180001	143320000
+chr1	219580001	219620000
+chr13	16020001	18040000
+chr5	49660001	49860000
+chr8	108700001	108960000
+chr8	117840001	117960000
+chr8	117960001	118240000
+chr9	13860001	14020000
+chr9	14020001	14200000
+chr9	14200001	14580000
+chr9	14580001	14700000
+chr9	21500001	21860000
+chrX	141000001	141040000
+chrY	56680001	56760000
+```
+| Figure 1           | Figure 2           | Figure 3  |
+|---------------------|---------------------|----------------------|
+| <img width="300" alt="image" src="https://github.com/user-attachments/assets/0ddc3029-2a10-4f17-9c0e-fb71169d67b4" /> | <img width="300" alt="image" src="https://github.com/user-attachments/assets/c5728cda-e25b-435d-828b-2294340f6e6e" /> | <img width="300" alt="image" src="https://github.com/user-attachments/assets/3e6b673b-a973-47b4-a612-3f20a9ebc5db" /> |
+| chr1	122500001	124780000 | chr1	143180001	143320000 | chr13	16020001	18040000 |
+
+
