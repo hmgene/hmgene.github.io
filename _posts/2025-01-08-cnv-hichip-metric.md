@@ -80,6 +80,7 @@ chrY	56680001	56760000
 
 
 **Examples**
+
 | Figures         | Genomic Loc           | Comments  |
 |---------------------|---------------------|----------------------|
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/0ddc3029-2a10-4f17-9c0e-fb71169d67b4" /> | chr1	122500001	124780000 | Off-target fragmented |
@@ -111,6 +112,7 @@ chr9	40700001	41820000
 chrX	3840001	3920000
 ```
 **Examples**
+
 | Figures         | Genomic Loc           | Comments  |
 |---------------------|---------------------|----------------------|
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/019a1c6b-5463-4810-b1fc-dfc9e545307c" /> | chr1	120280001	120320000 | |
