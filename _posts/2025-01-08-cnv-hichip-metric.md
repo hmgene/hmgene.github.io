@@ -61,7 +61,7 @@ chrY	56680001	56760000
 |---------------------|---------------------|----------------------|
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/0ddc3029-2a10-4f17-9c0e-fb71169d67b4" /> | chr1	122500001	124780000 | Off-target fragmented |
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/c5728cda-e25b-435d-828b-2294340f6e6e" /> | chr1	143180001	143320000 | Off-target missing |
-| <img width="300" alt="image" src="https://github.com/user-attachments/assets/3e6b673b-a973-47b4-a612-3f20a9ebc5db" /> | chr1	219580001	219620000  | Off-target missing  |
+| <img width="300" alt="image" src="https://github.com/user-attachments/assets/3e6b673b-a973-47b4-a612-3f20a9ebc5db" /> | chr1	219580001	219620000  | Off-target missing+fragmented  |
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/1f3acc71-ce71-4437-bc6e-3c4773303c4c" /> | chr5	49660001	49860000 | Low signal |
 
 
