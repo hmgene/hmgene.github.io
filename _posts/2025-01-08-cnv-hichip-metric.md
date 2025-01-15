@@ -25,4 +25,15 @@ categories: cnv hichip
 - TP segments : Input CNV > 1 and | Target CNV - Input CNV | < 0.5 
 - FN segments : Input CNV > 1 and  Target CNV - Input CNV < - 0.5
 - Signals (Color) : normalized log2 FC ( after correcting GC bias, Off-target, mappability)
+
+Table
+| Sample | number |
+|---|---|---|
+| region_fn.bed | 15 |
+| region_fn_MG63_ChIP.bed | 7 |
+| region_fn_MG63_HiChIP.bed | 15 |
+| region_tp.bed | 188 |
+| region_tp_MG63_ChIP.bed | 188 |
+| region_tp_MG63_HiChIP.bed | 188 |
+
 <img width="335" alt="image" src="https://github.com/user-attachments/assets/f6a5c71d-4641-4e4f-a820-67b9e31ce1db" />
