@@ -27,13 +27,14 @@ categories: cnv hichip
 - Signals (Color) : normalized log2 FC ( after correcting GC bias, Off-target, mappability)
 
 Table
-| Sample | number |
+
+| Sample | number | length distribution |
 |---|---|---|
-| region_fn.bed | 15 |
-| region_fn_MG63_ChIP.bed | 7 |
-| region_fn_MG63_HiChIP.bed | 15 |
-| region_tp.bed | 188 |
-| region_tp_MG63_ChIP.bed | 188 |
-| region_tp_MG63_HiChIP.bed | 188 |
+| region_fn.bed | 15 | min=40000, med=310000, avg=405957, max=2680000  |
+| region_fn_MG63_ChIP.bed | 7 | |
+| region_fn_MG63_HiChIP.bed | 15 | |
+| region_tp.bed | 188 | min=40000, med=180000, avg=444000, max=2280000  |
+| region_tp_MG63_ChIP.bed | 188 | |
+| region_tp_MG63_HiChIP.bed | 188 | |
 
 <img width="335" alt="image" src="https://github.com/user-attachments/assets/f6a5c71d-4641-4e4f-a820-67b9e31ce1db" />
