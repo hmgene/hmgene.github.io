@@ -48,8 +48,15 @@ categories: cnv hichip
 | region_tp.bed | 188 | min=40000, med=180000, avg=444000, max=2280000  |
 | region_tp_MG63_ChIP.bed | 188 | |
 | region_tp_MG63_HiChIP.bed | 188 | |
+| region_fp.bed | 20 | |
+| region_fp_MG63_ChIP.bed | 13 | |
+| region_fp_MG63_HiChIP.bed | 7 | |
 
-<img width="335" alt="image" src="https://github.com/user-attachments/assets/f6a5c71d-4641-4e4f-a820-67b9e31ce1db" />
+| Input | ChIP | HiChIP |
+|----------------|----------------|----------------|
+| <img width="241" alt="image" src="https://github.com/user-attachments/assets/82aab57c-cc0f-421d-acc0-c23233883d70" /> | <img width="248" alt="image" src="https://github.com/user-attachments/assets/7971e90c-6b76-4193-8d0c-a83c75685cbe" /> | <img width="237" alt="image" src="https://github.com/user-attachments/assets/f6c92fff-eae0-4c68-aea5-988e5ab4cc19" /> |
+
+
 
 **False Negative (region_fn.bed, * in the figures)**
 ```
