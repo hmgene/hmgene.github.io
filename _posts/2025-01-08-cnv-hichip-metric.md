@@ -76,6 +76,8 @@ chr9	21500001	21860000
 chrX	141000001	141040000
 chrY	56680001	56760000
 ```
+
+
 **Examples**
 | Figures         | Genomic Loc           | Comments  |
 |---------------------|---------------------|----------------------|
@@ -83,6 +85,36 @@ chrY	56680001	56760000
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/c5728cda-e25b-435d-828b-2294340f6e6e" /> | chr1	143180001	143320000 | Off-target missing |
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/3e6b673b-a973-47b4-a612-3f20a9ebc5db" /> | chr1	219580001	219620000  | Off-target missing+fragmented  |
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/1f3acc71-ce71-4437-bc6e-3c4773303c4c" /> | chr5	49660001	49860000 | Low signal |
+
+**False Positives**
+```
+chr1	120280001	120320000 *
+chr1	120320001	120600000
+chr1	144380001	144580000
+chr1	144880001	145300000
+chr1	148820001	149320000
+chr10	16940001	17240000 *
+chr11	123060001	123260000
+chr12	80240001	80680000
+chr13	16000001	16020000
+chr13	33100001	33300000
+chr13	75620001	75800000
+chr17	47460001	47560000 *
+chr2	150460001	150680000
+chr2	187540001	187600000
+chr2	97380001	97440000
+chr4	65480001	65680000
+chr5	42980001	43080000
+chr9	340001	820000
+chr9	40700001	41820000
+chrX	3840001	3920000
+```
+| Figures         | Genomic Loc           | Comments  |
+|---------------------|---------------------|----------------------|
+| <img width="300" alt="image" src="https://github.com/user-attachments/assets/019a1c6b-5463-4810-b1fc-dfc9e545307c" /> | chr1	120280001	120320000 | |
+| <img width="300" alt="image" src="https://github.com/user-attachments/assets/f5d4e1cc-d5b9-4ea9-8a7d-7c53db5fc4c0" /> | chr10	16940001	17240000 | | 
+| <img width="300" alt="image" src="https://github.com/user-attachments/assets/fe52cecc-401b-4e3a-8388-cd300721a047" /> | chr17	47460001	47560000 | |
+
 
 ### Summary
 - The causes of false positives can be categorized by comparison with the INPUT sample.
