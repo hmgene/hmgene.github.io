@@ -12,6 +12,18 @@ categories: cnv hichip
 - HiChIP-1D Treatment: Treated as standard ChIP-seq data.
 - HiChIP-3D Treatment (Loop): Utilizes looping information exclusively (Neoloop).
 
+### Proper Fragment Realignment Scoring
+```
+   [b          e]           # input score x
+[a       c]   [d        f]  # target score y,z
+=> # score of target on [b    e]
+
+   [b          e]           # w1 = |c-b|/|e-b|, w2= |e-d|/|e-b| 
+                            # score = (w1*x + w2*y) / (w1+w2)  ## w1 + w2 is not always 1
+```
+
+
+
 ### Comparison of MG63 Datasets with MG63 ChIP-seq Input
 - Informative Value: The HiChIP Loop method provides less informative results compared to other approaches.
 - Noise Levels: HiChIP 1D data is less noisy than ChIP-seq, primarily due to its higher sequencing depth.
@@ -21,7 +33,7 @@ categories: cnv hichip
 
 
 
-**Average Plots**
+### Average Plots
 - TP segments : Input CNV > 1 and | Target CNV - Input CNV | < 0.5 
 - FN segments : Input CNV > 1 and  Target CNV - Input CNV < - 0.5
 - Signals (Color) : normalized log2 FC ( after correcting GC bias, Off-target, mappability)
