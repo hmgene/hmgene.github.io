@@ -21,4 +21,8 @@ categories: cnv hichip
 
 
 
-
+**Average Plots**
+- TP segments : Input CNV > 1 and | Target CNV - Input CNV | < 0.5 
+- FN segments : Input CNV > 1 and  Target CNV - Input CNV < - 0.5
+- Signals (Color) : normalized log2 FC ( after correcting GC bias, Off-target, mappability)
+<img width="335" alt="image" src="https://github.com/user-attachments/assets/f6a5c71d-4641-4e4f-a820-67b9e31ce1db" />
