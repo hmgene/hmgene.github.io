@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "CNV-HiCHIP Performance Comparisons"
-date:   2025-01-08 11:54:38 -0400
+date:   2025-01-15 12:38:00 -0400
 categories: cnv hichip
 ---
 
@@ -51,13 +51,13 @@ categories: cnv hichip
 
 <img width="335" alt="image" src="https://github.com/user-attachments/assets/f6a5c71d-4641-4e4f-a820-67b9e31ce1db" />
 
-**FN bed***
+**False Negative (region_fn.bed, * in the figures)**
 ```
-chr1	122500001	124780000
-chr1	143180001	143320000
-chr1	219580001	219620000
+chr1	122500001	124780000 *
+chr1	143180001	143320000 *
+chr1	219580001	219620000 *
 chr13	16020001	18040000
-chr5	49660001	49860000
+chr5	49660001	49860000 *
 chr8	108700001	108960000
 chr8	117840001	117960000
 chr8	117960001	118240000
@@ -69,6 +69,7 @@ chr9	21500001	21860000
 chrX	141000001	141040000
 chrY	56680001	56760000
 ```
+**Examples**
 | Figures         | Genomic Loc           | Comments  |
 |---------------------|---------------------|----------------------|
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/0ddc3029-2a10-4f17-9c0e-fb71169d67b4" /> | chr1	122500001	124780000 | Off-target fragmented |
@@ -76,5 +77,8 @@ chrY	56680001	56760000
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/3e6b673b-a973-47b4-a612-3f20a9ebc5db" /> | chr1	219580001	219620000  | Off-target missing+fragmented  |
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/1f3acc71-ce71-4437-bc6e-3c4773303c4c" /> | chr5	49660001	49860000 | Low signal |
 
-
+### Summary
+- The causes of false positives can be categorized by comparison with the INPUT sample.
+- Peak calling with various window sizes is a significant factor (impact factor=4).
+- 3D off-target effects (loops) need to be investigated (impact factor > 4).
 
