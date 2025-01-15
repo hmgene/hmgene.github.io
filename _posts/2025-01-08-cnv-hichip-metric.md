@@ -36,6 +36,7 @@ categories: cnv hichip
 ### Average Plots
 - TP segments : Input CNV > 1 and | Target CNV - Input CNV | < 0.5 
 - FN segments : Input CNV > 1 and  Target CNV - Input CNV < - 0.5
+- FP segments : Target CNV > 1 and Input CNV < 0.5
 - Signals (Color) : normalized log2 FC ( after correcting GC bias, Off-target, mappability)
 
 **Summary**
@@ -109,6 +110,7 @@ chr9	340001	820000
 chr9	40700001	41820000
 chrX	3840001	3920000
 ```
+**Examples**
 | Figures         | Genomic Loc           | Comments  |
 |---------------------|---------------------|----------------------|
 | <img width="300" alt="image" src="https://github.com/user-attachments/assets/019a1c6b-5463-4810-b1fc-dfc9e545307c" /> | chr1	120280001	120320000 | |
