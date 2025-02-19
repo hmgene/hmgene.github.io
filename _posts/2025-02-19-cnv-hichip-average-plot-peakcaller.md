@@ -8,8 +8,9 @@ categories: cnv hichip
 ### Data 
 
 Data Considered
+
 | type | file |
-| --- | --- |
+| :---: | :---: |
 | Input | MG63.3_input_GSE74230.bam |
 | ChIP | MG63-GFP_H3K27ac_020823_NovoG.bam |
 | HiChIP | MG63_H3K27ac_OsteoAQuA.bam |
@@ -20,6 +21,7 @@ Selected regions by CNV >= 1
 **Average Plots at each selected region**
 
 Number of Regions  
+
 | counts | regions |
 |---|---|
 |     311  | input_gt1seg.bed |
@@ -36,6 +38,7 @@ Number of Regions
 **Average Plots at exclusive reginos**
 
 Number of Regions
+
 | counts | regions |
 |----|---|
 |     234  | input_or_chip_only.bed |
