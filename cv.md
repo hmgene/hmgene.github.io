@@ -16,7 +16,7 @@ permalink: /cv/
 <h2>Publications</h2>
 <ul>
   <li>Google: <a href="https://scholar.google.com/citations?hl=en&user=-UAQUkEAAAAJ&view_op=list_works&authuser=1&sortby=pubdate" target="_blank">GoogleScholar</a></li>
- <li>Google: <a href="https://www.ncbi.nlm.nih.gov/myncbi/1PIYcdwgAAHAl/bibliography/public/" target="_blank">PubMed</a></li>
+ <li>NCBI: <a href="https://www.ncbi.nlm.nih.gov/myncbi/1PIYcdwgAAHAl/bibliography/public/" target="_blank">PubMed</a></li>
 </ul>
 
 {% for section in site.data.cv.sections %}
