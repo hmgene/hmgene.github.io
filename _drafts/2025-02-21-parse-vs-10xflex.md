@@ -15,8 +15,8 @@ categories: parse-seq single-cell cnmf
 
 ## Summary
 
-| platform | reads or probes | avg. cells | avg. reads/cell | med. genes/cell | seq. saturation | 
-|:--: |:--:| :--: | :--: | :--: | :--: |
-| parse-seq| 2,547,170,863 |78,278 | 32,540 | 2,952 | 24.1% |
-| 10x pool1 | 978,088,688 | 76,319 | 12,816 | 2189 | 28%  |
-| 10x pool2 | 869,856,573 | 94,342 | 9,220 | 2153 | 19.8% |
+| platform | reads or probes | avg. cells | avg. reads/cell | med. genes/cell | seq. saturation | details |
+|:--: |:--:| :--: | :--: | :--: | :--: | :-: |
+| parse-seq| 2,547,170,863 |78,278 | 32,540 | 2,952 | 24.1% | | 
+| 10x pool1 | 978,088,688 | 76,319 | 12,816 | 2189 | 28%  | [UH14](https://raw.githack.com/hmgene/parse-vs-10x-pub/main/data/10x/pool1_UH14_web_summary.html) |
+| 10x pool2 | 869,856,573 | 94,342 | 9,220 | 2153 | 19.8% | |
