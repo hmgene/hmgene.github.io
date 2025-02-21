@@ -13,6 +13,12 @@ permalink: /cv/
   <li>LinkedIn: <a href="{{ site.data.cv.contact.linkedin }}" target="_blank">LinkedIn Profile</a></li>
   <li>GitHub: <a href="{{ site.data.cv.contact.github }}" target="_blank">GitHub Profile</a></li>
 </ul>
+<h2>Publications</h2>
+<ul>
+  <li>Google: <a href="https://scholar.google.com/citations?hl=en&user=-UAQUkEAAAAJ&view_op=list_works&authuser=1&sortby=pubdate" target="_blank">GoogleScholar</a></li>
+ <li>Google: <a href="https://www.ncbi.nlm.nih.gov/myncbi/1PIYcdwgAAHAl/bibliography/public/" target="_blank">PubMed</a></li>
+</ul>
+
 {% for section in site.data.cv.sections %}
   <h2>{{ section.title }}</h2>
   <ul>
