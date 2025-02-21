@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Parse-seq vs 10X and TrailMaker vs Scanpy : Fixed All Programs"
+title:  "Parse-seq vs 10X Summary : with Details"
 date:   2025-01-21 6:46:00 -0400
-categories: parse-seq single-cell cnmf   
+categories: parse-seq single-cell cnmf 10xflex
 ---
 # Parse-Seq vs 10X
 
