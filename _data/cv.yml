@@ -19,7 +19,7 @@ sections:
         institution: GwanJu Institute of Science and Technology (GIST), Gwanju, S. Korea
         dates: 2000 - 2002
         description: >
-          Specialized in Parallel Data Mining 
+          Fully Government Supported, Specialized in Parallel Data Mining 
       - degree: B.S in Computer Science 
         institution: InHa University, Incheon, S. Korea
         dates: 1993 - 2000 (Served Army 1995-1997)
@@ -41,6 +41,11 @@ sections:
         dates: 2020 - 2021
         description: >
           Leading the bioinformatics in single-cell studies 
+      - position: Research Instructor (Faculty)
+        institution: University of Colorado School of Medicine, Aurora CO
+        dates: 2012 - 2020
+        description: >
+          Specialized in RNA-processing for Cancer Studies 
 
   - title: Skills
     items:
@@ -51,5 +56,5 @@ sections:
         category: Workflow
         name: WDL, Nextflow
       - skill: Languages
-        category: WebDB
-        name: MySQL, WDL, Nextflow, Streamlit
+        category: Web and Bigdata
+        name: DBMS, FastAPI, Streamlit, etc.
