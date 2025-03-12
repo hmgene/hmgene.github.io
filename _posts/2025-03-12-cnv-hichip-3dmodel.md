@@ -15,20 +15,20 @@ categories: cnv hichip
 
 How to Account for CNV in 3D Contact Normalization using HiChIP learning from HiC approaches. 
 </br>When:
-- $C_{i,j}$ : unknown contact map between i and j
-- $D_{i,j}$ : observed contact counts between i and j
-- $B_i$ : Bias term
-- $scale^k$ : the average of nonzero marginal sums of bins with copy number equaling to k.
+- C[i,j] : unknown contact map between i and j
+- D[i,j] : observed contact counts between i and j
+- B[i] : Bias term
+- S[k] : the average of nonzero marginal sums of bins with copy number equaling to k.
 
 The corrected Contact map $C$ can be calculated by:
 | equation | description |
 | :-: | :- |
-| $C_{i,j} = B_i D_{i,j} B_j$ | estimate $C$ using $B$ |
-| {% raw %}$$B_{i} = \frac{B_{i} \times \text{scale}^k}{\sum_{j} D_{ij}^\prime}$${% endraw %}| update $B_i$ ~ k-copy effect/marginal contact effect |
+| C[i,j] = B[i] x D[i,j] x B[j] | estimate C  |
+| B[i] = B[i] x S[k] / sum(D[i,]) | update B[i] ~ k-copy proportion over all contact flux from i |
 
-NeoLoopFinder incorperates a $scale^k$ term for the bins w/ CNV value is k. 
-In brief, this additional term, relative to the marginal contacts ${\mathop {\sum }\nolimits_{j} D_{{ij}}^\prime }$ 
-panelizes the $C_{ij}$ in proportion to the CNV amount.
+NeoLoopFinder incorperates a S[k] term for the bins w/ CNV value is k. 
+In brief, this additional term, relative to the marginal contacts sum(D[i,]). 
+panelizes the C[i,j] in proportion to the CNV amount.
 I interpret this as a CNV-aware track, where biases are factorized into contributions corresponding to multiple CNV levels.
   
 ### Results
