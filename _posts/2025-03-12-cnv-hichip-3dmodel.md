@@ -21,10 +21,11 @@ How to Account for CNV in 3D Contact Normalization using HiChIP learning from Hi
 - S[k] : the average of nonzero marginal sums of bins with copy number equaling to k.
 
 The corrected Contact map $C$ can be calculated by:
+
 | equation | description |
 | :-: | :- |
 | C[i,j] = B[i] x D[i,j] x B[j] | estimate C  |
-| B[i] = B[i] x S[k] / sum(D[i,]) | update B[i] ~ k-copy proportion over all contact flux from i |
+| B[i] = B[i] x S[k] / sum(D[i,]) | update B[i] := k-copy proportion over all contact flux from i |
 
 NeoLoopFinder incorperates a S[k] term for the bins w/ CNV value is k. 
 In brief, this additional term, relative to the marginal contacts sum(D[i,]). 
