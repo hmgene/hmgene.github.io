@@ -24,7 +24,7 @@ The corrected Contact map $C$ can be calculated by:
 | equation | description |
 | :-: | :- |
 | $C_{i,j} = B_i D_{i,j} B_j$ | estimate $C$ using $B$ |
-| $$B_{i} = \frac{{B_{i} \times scale^k}}{ \sum_{j} D_{{ij}}^\prime  }$$ | update $B_i$ ~ k-copy effect/marginal contact effect |
+| {% raw %}$$B_{i} = \frac{B_{i} \times \text{scale}^k}{\sum_{j} D_{ij}^\prime}$${% endraw %}| update $B_i$ ~ k-copy effect/marginal contact effect |
 
 NeoLoopFinder incorperates a $scale^k$ term for the bins w/ CNV value is k. 
 In brief, this additional term, relative to the marginal contacts ${\mathop {\sum }\nolimits_{j} D_{{ij}}^\prime }$ 
