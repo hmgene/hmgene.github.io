@@ -20,7 +20,7 @@ How to Account for CNV in 3D Contact Normalization using HiChIP learning from Hi
 - B[i] : Bias term
 - S[k] : the average of nonzero marginal sums of bins with copy number equaling to k.
 
-The corrected Contact map $C$ can be calculated by:
+The corrected Contact map C can be calculated by:
 
 | equation | description |
 | :-: | :- |
