@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default("My Portfolio") }}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    body { font-family: sans-serif; margin:0; padding:0; background:#fff; color:#111; }
+    header, footer { background:#222; color:#fff; padding:1rem; text-align:center; }
+    main { padding:2rem; max-width:1000px; margin:auto; }
+    h1, h2 { margin-top:1rem; }
+    .projects, .skills, .downloads { margin-top:2rem; }
+    .project, .download { border:1px solid #ccc; padding:1rem; margin-bottom:1rem; border-radius:6px; }
+    a { color:#0066cc; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>{{ siteName | default("My Portfolio") }}</h1>
+</header>
+
+<main>
+
+  {{ content | safe }}
+
+  {% if skills %}
+  <section class="skills">
+    <h2>Skills</h2>
+    <ul>
+      {% for skill in skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if projects %}
+  <section class="projects">
+    <h2>Projects</h2>
+    {% for project in projects %}
+      <div class="project">
+        <h3>{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+        {% if project.link %}<a href="{{ project.link }}" target="_blank">View Project</a>{% endif %}
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if downloads %}
+  <section class="downloads">
+    <h2>Downloads</h2>
+    {% for file in downloads %}
+      <div class="download">
+        <a href="{{ file.url }}" download>{{ file.name }}</a>
+      </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+</main>
+
+<footer>
+  &copy; {{ year | default("2026") }} {{ siteName | default("My Portfolio") }}
+</footer>
+
+</body>
+</html>
+

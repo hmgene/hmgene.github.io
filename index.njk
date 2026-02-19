@@ -1,0 +1,47 @@
+---
+layout: pp.njk
+title: "My Projects"
+siteName: "Hyunmin Kim"
+year: 2026
+skills:
+  - 3D Genomics
+  - RNA Processing & Splicing
+  - Lung Premalignancy Analysis
+projects:
+  - name: "Scenic TF Network"
+    description: "A pipeline for single-cell regulon analysis and visualization."
+    link: "https://github.com/hmgene/scenic-project"
+downloads:
+  - name: "Sample Data"
+    url: "/downloads/sample_data.csv"
+---
+
+
+<h2>Projects</h2>
+<input type="text" id="skill-filter" placeholder="Filter by skill...">
+
+<table id="projects-table">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Skills</th>
+      <th>Year</th>
+      <th>Link</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<h2>Downloads</h2>
+<ul>
+  <li><a href="/downloads/CV_HyunminKim.pdf" download>Download My CV</a></li>
+  <li><a href="/downloads/example_code.zip" download>Download Example Code</a></li>
+  <li><a href="/downloads/dataset.csv" download>Download Dataset</a></li>
+</ul>
+
+<h1>{{ cv.personal_info.name }}</h1>
+<p>{{ cv.personal_info.current_title }} | {{ cv.personal_info.department }}, {{ cv.personal_info.institution }}</p>
+<p>{{ cv.personal_info.location }}</p>
+<p>Email: <a href="mailto:{{ cv.personal_info.contact.email }}">{{ cv.personal_info.contact.email }}</a></p>
+<p>Phone: {{ cv.personal_info.contact.phone }}</p>
+<p>Google Scholar: <a href="{{ cv.personal_info.contact.google_scholar }}" target="_blank">Link</a></p>
