@@ -1,14 +1,3 @@
-# Node modules
-node_modules/
-
-# 11ty output folder
+_node_modules/
 _site/
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# OS files
 .DS_Store
-Thumbs.db
