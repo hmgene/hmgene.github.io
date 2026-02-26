@@ -16,6 +16,16 @@ downloads:
     url: "/downloads/sample_data.csv"
 ---
 
+<h1>Research Dashboard</h1>
+
+{% for repo in repos %}
+  <div>
+    <h2>{{ repo.name }}</h2>
+    ⭐ {{ repo.stargazers_count }}
+    Issues: {{ repo.open_issues_count }}
+  </div>
+{% endfor %}
+
 
 <h2>Projects</h2>
 <input type="text" id="skill-filter" placeholder="Filter by skill...">
