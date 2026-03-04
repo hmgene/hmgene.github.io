@@ -1,13 +1,16 @@
 // .eleventy.js
 const fetch = require("node-fetch"); // node-fetch v2
+const { DateTime } = require("luxon")
 require("dotenv").config();
 
+
 module.exports = function(eleventyConfig) {
-  // -----------------------
-  // 1️⃣ Blog collection
-  // -----------------------
+  eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles.css"); // if in src/
 
+  eleventyConfig.addFilter("date", function(value, format = "yyyy-MM-dd") {
+    return DateTime.fromJSDate(value).toFormat(format);
+  });
 
   eleventyConfig.addCollection("blog", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/blog/*.md");
