@@ -1,9 +1,16 @@
 ---
-layout: layout.njk
+layout: blog-layout.njk
 title: Designing CNV-Aware Models
+date: 2026-03-04
+tags: blog
 ---
 
-# Designing CNV-Aware Models
+This post discusses integrating copy number variation into
+peak detection frameworks using negative binomial GAM models.
 
-A discussion on integrating copy number variation
-into peak detection frameworks using negative binomial GAM.
+We focus on:
+
+- CNV segmentation
+- GC correction
+- Mappability covariates
+- Regulatory inference implications
