@@ -3,11 +3,22 @@ const fetch = require("node-fetch"); // node-fetch v2
 require("dotenv").config();
 
 module.exports = function(eleventyConfig) {
+  // -----------------------
+  // 1️⃣ Blog collection
+  // -----------------------
+  eleventyConfig.addPassthroughCopy("src/styles.css"); // if in src/
 
-  // Add global data for GitHub repos
+
+  eleventyConfig.addCollection("blog", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.md");
+  });
+
+  // -----------------------
+  // 2️⃣ Global GitHub repo data
+  // -----------------------
   eleventyConfig.addGlobalData("repos", async () => {
     const owner = "hmgene";            // <-- your GitHub username
-    const repos = ["fossil-c"];            // <-- list of repo names
+    const repos = ["fossil-c"];        // <-- list of repo names
 
     try {
       const results = await Promise.all(
@@ -28,21 +39,24 @@ module.exports = function(eleventyConfig) {
         })
       );
 
-      // Remove any failed fetches
       return results.filter(Boolean);
-
     } catch (err) {
       console.error("Fetch failed:", err);
       return [];
     }
   });
 
-  // Copy static assets
+  // -----------------------
+  // 3️⃣ Passthrough copy
+  // -----------------------
   eleventyConfig.addPassthroughCopy("assets");
 
+  // -----------------------
+  // 4️⃣ Directory config
+  // -----------------------
   return {
     dir: {
-      input: "",
+      input: "src",
       output: "_site"
     }
   };

@@ -1,5 +1,0 @@
-[
-  { "name": "Portfolio Site", "skills": ["JS", "HTML", "CSS", "Eleventy"], "year": 2025, "link": "https://github.com/yourname/portfolio" },
-  { "name": "Data Viz Dashboard", "skills": ["D3.js", "Python", "Eleventy"], "year": 2024, "link": "https://github.com/yourname/dataviz" },
-  { "name": "Machine Learning Tool", "skills": ["Python", "Scikit-learn", "Pandas"], "year": 2023, "link": "https://github.com/yourname/ml-tool" }
-]
